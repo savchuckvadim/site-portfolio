@@ -1,0 +1,168 @@
+{
+    "sectionTitle": "Technical Skills",
+    "sectionSubtitle": "A comprehensive overview of my technical skills and experience",
+    "categories": {
+        "frontend": {
+            "name": "Frontend",
+            "skills": [
+                {
+                    "name": "HTML, CSS, JavaScript",
+                    "code": "htmlcssjs",
+                    "description": "Core web technologies that I've mastered for building responsive and interactive web applications. I create semantic HTML structures, implement modern CSS layouts with Flexbox and Grid, and write clean JavaScript code.",
+                    "experience": "Developed numerous websites and web applications with responsive designs and cross-browser compatibility."
+                },
+                {
+                    "name": "React",
+                    "code": "react",
+                    "description": "Building complex user interfaces with React, including custom hooks, context API, and performance optimization techniques.",
+                    "experience": "Developed and maintained large-scale React applications with complex state management and component architecture."
+                },
+                {
+                    "name": "Redux & Redux Toolkit",
+                    "code": "redux",
+                    "description": "Managing application state with Redux and Redux Toolkit, implementing middleware, thunks, and selectors for efficient state management.",
+                    "experience": "Implemented Redux in multiple projects, refactored legacy code to use Redux Toolkit, and created reusable state management patterns."
+                },
+                {
+                    "name": "Next.js",
+                    "code": "nextjs",
+                    "description": "Building server-rendered React applications with Next.js, leveraging both static site generation (SSG) and server-side rendering (SSR).",
+                    "experience": "Developed production-grade Next.js applications with optimized performance, SEO, and user experience. Implemented both App Router and Pages Router architectures."
+                },
+                {
+                    "name": "TypeScript",
+                    "code": "typescript",
+                    "description": "Writing type-safe code with TypeScript, creating custom types, interfaces, and generics for robust application development.",
+                    "experience": "Converted JavaScript codebases to TypeScript, created type definitions for external libraries, and implemented advanced typing patterns."
+                },
+                {
+                    "name": "Webpack",
+                    "code": "webpack",
+                    "description": "Configuring and optimizing Webpack for different project needs, including microfrontends and monorepos.",
+                    "experience": "Set up custom Webpack configurations for microfrontend architectures, implemented module federation, and optimized build performance."
+                },
+                {
+                    "name": "Turbopack & Turborepo",
+                    "code": "turbopack",
+                    "description": "Using Turbopack for faster builds and Turborepo for managing monorepos with multiple packages and applications.",
+                    "experience": "Implemented Turborepo in large-scale projects to improve build times and developer experience. Configured caching and remote building."
+                }
+            ]
+        },
+        "backend": {
+            "name": "Backend",
+            "skills": [
+                {
+                    "name": "Nest.js",
+                    "code": "nestjs",
+                    "description": "Building scalable and maintainable backend applications with Nest.js, leveraging its modular architecture and dependency injection system.",
+                    "experience": "Developed RESTful APIs, GraphQL services, and microservices with Nest.js. Implemented authentication, authorization, and validation."
+                },
+                {
+                    "name": "FastAPI",
+                    "code": "fastapi",
+                    "description": "Creating high-performance APIs with FastAPI, utilizing its automatic documentation generation and type validation.",
+                    "experience": "Built production-ready APIs with FastAPI, implemented async/await patterns, and integrated with various databases and services."
+                },
+                {
+                    "name": "WebSockets",
+                    "code": "websockets",
+                    "description": "Implementing real-time communication between clients and servers using WebSockets for chat applications, live updates, and notifications.",
+                    "experience": "Developed chat systems, real-time dashboards, and collaborative editing features using WebSockets with both frontend and backend integration."
+                },
+                {
+                    "name": "Queues",
+                    "code": "queues",
+                    "description": "Working with message queues for asynchronous processing, job scheduling, and distributed systems communication.",
+                    "experience": "Implemented RabbitMQ, Redis, and other queue systems for background processing, email sending, and data synchronization between services."
+                },
+                {
+                    "name": "REST API Design",
+                    "code": "restapi",
+                    "description": "Designing and implementing RESTful APIs following best practices for endpoints, status codes, and documentation.",
+                    "experience": "Created comprehensive API documentation, implemented versioning strategies, and designed scalable API architectures for various projects."
+                }
+            ]
+        },
+        "databases": {
+            "name": "Databases",
+            "skills": [
+                {
+                    "name": "Database Design",
+                    "code": "databases",
+                    "description": "Designing database schemas, relationships, and optimization strategies for different types of applications.",
+                    "experience": "Created database designs for various projects, implemented normalization, indexing, and query optimization techniques."
+                },
+                {
+                    "name": "MySQL",
+                    "code": "mysql",
+                    "description": "Working with MySQL databases for relational data storage, including complex queries, stored procedures, and performance optimization.",
+                    "experience": "Implemented MySQL in production environments, created efficient schemas, and optimized query performance for high-traffic applications."
+                },
+                {
+                    "name": "PostgreSQL",
+                    "code": "postgresql",
+                    "description": "Leveraging PostgreSQL's advanced features for complex data models, including JSON storage, full-text search, and geospatial data.",
+                    "experience": "Used PostgreSQL for enterprise applications, implemented complex data models, and utilized advanced features like JSONB and array types."
+                },
+                {
+                    "name": "Firebase",
+                    "code": "firebase",
+                    "description": "Using Firebase for real-time databases, authentication, storage, and serverless functions in web and mobile applications.",
+                    "experience": "Implemented Firebase in multiple projects, including real-time data synchronization, user authentication, and cloud functions."
+                }
+            ]
+        },
+        "devops": {
+            "name": "DevOps & Infrastructure",
+            "skills": [
+                {
+                    "name": "CI/CD with GitHub Actions",
+                    "code": "cicd",
+                    "description": "Setting up continuous integration and deployment pipelines with GitHub Actions for automated testing, building, and deployment.",
+                    "experience": "Created CI/CD workflows for various projects, implemented automated testing, and configured deployment to different environments."
+                },
+                {
+                    "name": "Linux",
+                    "code": "linux",
+                    "description": "Working with Linux servers for development and production environments, including shell scripting and server configuration.",
+                    "experience": "Managed Linux servers, wrote shell scripts for automation, and configured web servers like Nginx and Apache."
+                }
+            ]
+        },
+        "architecture": {
+            "name": "Architecture",
+            "skills": [
+                {
+                    "name": "Feature-Slice Design",
+                    "code": "fsd",
+                    "description": "Implementing Feature-Slice Design methodology for frontend applications, organizing code by features rather than technical layers.",
+                    "experience": "Applied Feature-Slice Design in React and Next.js projects, resulting in better code organization, maintainability, and team collaboration."
+                },
+                {
+                    "name": "Onion/Modular Architecture",
+                    "code": "onion",
+                    "description": "Designing backend systems with Onion Architecture and modular patterns for better separation of concerns and maintainability.",
+                    "experience": "Implemented Onion Architecture in Nest.js applications, creating clear boundaries between domain, application, and infrastructure layers."
+                }
+            ]
+        },
+        "ai": {
+            "name": "AI & Advanced Tech",
+            "skills": [
+                {
+                    "name": "Chat Systems",
+                    "code": "chat",
+                    "description": "Building real-time chat applications with features like message delivery status, typing indicators, and file sharing.",
+                    "experience": "Developed chat systems for various applications, including direct messaging, group chats, and customer support interfaces."
+                },
+                {
+                    "name": "AI Agents with Retrieval",
+                    "code": "rag",
+                    "description": "Creating AI agents with retrieval capabilities using Python and FastAPI, integrating with language models and vector databases.",
+                    "experience": "Implemented retrieval-augmented generation (RAG) systems, integrated with LLMs, and built context-aware AI assistants for various domains."
+                }
+            ]
+        }
+    }
+}
