@@ -1,32 +1,21 @@
 import { locales } from '@/i18n';
 import { Header } from '@/modules/widgetes';
-import LoadingScreen from '@/modules/shared/LoadingScreen/ui/LoadingScreen';
 import { NextIntlClientProvider } from 'next-intl';
-import { Providers } from '@/modules/app';
 import { notFound } from 'next/navigation';
 import { Footer } from '@/modules/widgetes';
-import { Geist, Geist_Mono } from 'next/font/google';
 import { Metadata } from 'next';
-import { getMessages } from 'next-intl/server';
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
-    title: "Volkov Design",
-    description: "Elegant and Unique Design",
-    keywords: ["Design", "Interior Design", "Architecture"],
+    title: "Vadim Savchuk",
+    description: "Site of Vadim Savchuk - Frontend Developer",
+    keywords: ["Developer", "Interior Design", "Architecture"],
     openGraph: {
-        title: "Volkov Design - Elegant and Unique",
-        description: "Discover top-notch interior design and architecture solutions.",
-        url: "https://volkovdesign.com",
-        siteName: "Volkov Design",
+        title: "Savchuk Developer - Architecture and Web Development",
+        description: "Discover top-notch architecture and web development solutions.",
+        url: "https://savchukdeveloper.com",
+        siteName: "Savchuk Developer",
         // locale: "en_US",
         type: "website",
     },
@@ -48,10 +37,8 @@ export default async function LocaleLayout({
     // const messages = await getMessages();
     const param = await params;
     const locale = param.locale;
-    console.log('param.locale')
-    console.log(locale)
-    console.log(locale)
-    if (!locale || !locales.includes(locale as any)) {
+
+    if (!locale || !locales.includes(locale as typeof locales[number])) {
         notFound();
     }
 
@@ -66,7 +53,8 @@ export default async function LocaleLayout({
             navigation,
             skills
         }
-    } catch (e) {
+    } catch (error: unknown) {
+        console.error('Error loading messages:', error);
         notFound()
     }
 

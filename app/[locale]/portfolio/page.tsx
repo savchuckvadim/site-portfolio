@@ -1,16 +1,9 @@
+import { ProjectsSection } from "@/modules/widgetes";
 
-import {  ProjectsSection } from "@/modules/widgetes";
-
-
-
-export default function Home() {
+export default function Portfolio() {
   return (
-
-      <main>
-
-        <ProjectsSection />
-
-      </main>
-
+    <main>
+      <ProjectsSection />
+    </main>
   )
 }

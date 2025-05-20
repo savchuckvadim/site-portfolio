@@ -1,4 +1,5 @@
-import { getCurrentLocale } from "@/app/lib/locale"
+'use client'
+import { useCurrentLocale } from "@/app/lib/useCurrentLocale"
 import { SkillsTranslations, SkillCategory, SkillEntry } from "../types/skill-type"
 import { getSkillsTranslations } from "../lib/util"
 import { CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,7 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Skills() {
-    const locale = getCurrentLocale()
+    const locale = useCurrentLocale()
     const translations: SkillsTranslations = getSkillsTranslations(locale)
 
     const categories = Object.entries(translations.categories) as [string, SkillCategory][]
