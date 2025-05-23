@@ -1,8 +1,10 @@
 'use client'
+
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useTransition } from 'react';
+import Flag from './components/Flag';
 
 const LanguageSwitcher = () => {
   const router = useRouter()
@@ -24,7 +26,8 @@ const LanguageSwitcher = () => {
 
   return (
     <button onClick={switchLanguage} disabled={isPending} className="text-sm hover:underline">
-      {otherLocale === 'en' ? 'English' : 'Русский'}
+      <Flag type={otherLocale} />
+      {/* {otherLocale === 'en' ? 'English' : 'Русский'} */}
     </button>
   )
 }

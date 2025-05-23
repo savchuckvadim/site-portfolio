@@ -1,0 +1,1 @@
+export { default as ResumeDownLoad } from './ui/ResumeDownLoad'

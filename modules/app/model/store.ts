@@ -1,7 +1,7 @@
 // import { serviceReducer } from '@/modules/admin/entities/Services';
 import { chatReducer } from '@/modules/entities/Chat';
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
-
+import { themeReducer } from '@/modules/features/theme';
 
 export const listenerMiddleware = createListenerMiddleware();
 
@@ -12,7 +12,7 @@ export const listenerMiddleware = createListenerMiddleware();
 
 const rootReducer = combineReducers({
     chat: chatReducer,
-  
+    theme: themeReducer,
     // service: serviceReducer
 
 

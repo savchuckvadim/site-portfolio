@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import User from "@/modules/entities/User/ui/User"
 
 export default function HeroSection() {
   return (
@@ -26,14 +27,18 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          <Image
+          <div className="min-w-full flex flex-col justify-end items-end">
+            {/* <Image
             src='/window.svg'
             width={550}
             height={550}
             alt="Hero"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-          />
+          /> */}
+            <User />
+          </div>
         </div>
+
       </div>
     </section>
   )

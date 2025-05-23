@@ -17,7 +17,7 @@ export default function Skills() {
     return (
         <div className="mx-auto max-w-5xl py-12">
             <Tabs defaultValue={categories[0][0]} className="w-full">
-                <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+                <TabsList className="grid w-full grid-cols-2 h-24 md:h-20 lg:h-9 md:grid-cols-3 lg:grid-cols-6">
                     {categories.map((category) => (
                         <TabsTrigger key={category[0]} value={category[0]}>
                             {translations.categories[category[0]]?.name || category[0]}

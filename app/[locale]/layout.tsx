@@ -59,10 +59,12 @@ export default async function LocaleLayout({
     }
 
     return (<NextIntlClientProvider locale={locale} messages={messages}>
-        <div className="fixed w-full z-10">
+        <div className="w-full">
             <Header />
         </div>
-        {children}
+        <div className="container  mx-auto">
+            {children}
+        </div>
         <Footer />
 
     </NextIntlClientProvider>
