@@ -3,30 +3,30 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './loading.css';
-import ScaleLoader from "react-spinners/ScaleLoader";
-import Image from 'next/image';
+import RingLoader from "react-spinners/ScaleLoader";
+
 const LoadingScreen = () => {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, 3000); // 3 секунды прелоадер
-
+        }, 900); // 3 секунды прелоадер
+debugger
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <div className="bg-white">
+        <div className="bg-black">
             {isVisible &&
 
                 (
-                    <motion.div
-                        className="loading-screen bg-primary"
-                        initial={{ opacity: 1 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    <div
+                        className="loading-screen bg-black/50 backdrop-blur-sm"
+                        // initial={{ opacity: 1 }}
+                        // animate={{ opacity: 1 }}
+                        // exit={{ opacity: 0 }}
+                        // transition={{ duration: 0.2, ease: 'easeInOut' }}
                     >
                         <div className="center-spinner color-primary flex flex-col justify-center items-center">
                             {/* <div className="spinner color-primary"></div>
@@ -34,53 +34,33 @@ const LoadingScreen = () => {
                             {/* <Rabbit size={50} />
                              */}
                             <div className='p-5 rounded-xl bg-white'>
-                                <Image
-                                    src="/volkov.svg"
-                                    alt="Logo"
-                                    width={120}
-                                    height={85}
-                                    className="backgound:invert"
-                                    priority
-                                />
+                                <RingLoader />
+
 
 
                             </div>
-                            <div className='p-2 h-2 flex justify-center items-center  mt-3  rounded-xl bg-white'>
-                                <ScaleLoader
-                                    className='m-0 p-0 color-foreground '
-                                    height={3}
-                                    width={25}
-                                // color='foreground'
-                                />
-                            </div>
+
                         </div>
 
-                        {/* <motion.div
-                        className="horizontal-line"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 0.8 }}
-                        transition={{ duration: 1, ease: 'easeInOut' }}
-                    /> */}
-                        {/* <Rabbit size={55} />
-                        <p className='mt-10'>Loading...</p> */}
+
                         {/* Верхняя половина */}
-                        <motion.div
-                            className="reveal-top bg-white"
+                         {/* <motion.div
+                            className="reveal-top bg-secondary/20"
                             initial={{ y: 0 }}
                             animate={{ y: '-100%' }}
                             exit={{ y: '-100%' }}
-                            transition={{ duration: 0.8, delay: 1, ease: 'easeInOut' }}
-                        ></motion.div>
+                            transition={{ duration: 0.4, delay: 0.3, ease: 'easeInOut' }}
+                        ></motion.div> 
 
 
                         <motion.div
-                            className="reveal-bottom bg-white"
+                            className="reveal-bottom bg-secondary/20"
                             initial={{ y: 0 }}
                             animate={{ y: '100%' }}
                             exit={{ y: '100%' }}
-                            transition={{ duration: 0.8, delay: 1, ease: 'easeInOut' }}
-                        ></motion.div>
-                    </motion.div>
+                            transition={{ duration: 0.4, delay: 0.3, ease: 'easeInOut' }}
+                        ></motion.div>  */}
+                    </div>
                 )}
         </div>
     );

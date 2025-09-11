@@ -7,27 +7,35 @@ import { CardDescription } from "@/components/ui/card"
 import { CardContent } from "@/components/ui/card"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { memo } from "react"
+import { useSkillsTab } from "../model/useSkillsTab"
 
-export default function Skills() {
+export default memo(function Skills() {
     const locale = useCurrentLocale()
     const translations: SkillsTranslations = getSkillsTranslations(locale)
-
     const categories = Object.entries(translations.categories) as [string, SkillCategory][]
+    const { currentTab, setCurrentTab } = useSkillsTab()
+
+
 
     return (
         <div className="mx-auto max-w-5xl py-12">
-            <Tabs defaultValue={categories[0][0]} className="w-full">
+            <Tabs value={currentTab} onValueChange={setCurrentTab} className="w-full">
                 <TabsList className="grid w-full grid-cols-2 h-24 md:h-20 lg:h-9 md:grid-cols-3 lg:grid-cols-6">
-                    {categories.map((category) => (
-                        <TabsTrigger key={category[0]} value={category[0]}>
-                            {translations.categories[category[0]]?.name || category[0]}
+                    {categories.map(([key, cat]) => (
+                        <TabsTrigger key={key} value={key}>
+                            {cat?.name || key}
                         </TabsTrigger>
                     ))}
                 </TabsList>
-                {categories.map((category) => (
-                    <TabsContent key={category[0]} value={category[0]} className="mt-6">
+
+                {categories.map(([key, cat]) => 
+                   { 
+                    debugger;
+                    return <TabsContent key={key} value={key} className="mt-6">
+
                         <div className="grid gap-6 md:grid-cols-2">
-                            {translations.categories[category[0]]?.skills.map((skill: SkillEntry) => {
+                            {translations.categories[key]?.skills.map((skill: SkillEntry) => {
                                 const code = skill.code
                                 return (
                                     <Card key={skill.name} className="overflow-hidden">
@@ -55,8 +63,8 @@ export default function Skills() {
                             })}
                         </div>
                     </TabsContent>
-                ))}
+                })}
             </Tabs>
         </div>
     )
-}
+})

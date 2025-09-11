@@ -10,6 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return <Provider store={store}>
     <AppInitializer>
+      
       {/* <ProjectsProvider> */}
         {children}
       {/* </ProjectsProvider> */}

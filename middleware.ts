@@ -28,7 +28,7 @@ export const config = {
         // - static files (e.g. favicon.ico, robots.txt)
         // - static media files (e.g. images, fonts)
         // - _next internal routes
-        '/((?!api|_next|.*\\..*).*)',
+        '/((?!api|_next|resume|.*\\..*).*)',
         // Also match the root path
         '/', '/(en|ru)/:path*'
     ]

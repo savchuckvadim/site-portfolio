@@ -1,0 +1,77 @@
+{
+  "title": "Проекты",
+  "subtitle": "Ознакомьтесь с некоторыми из моих последних работ и личных проектов",
+  "projects": [
+    {
+      "id": 1,
+      "title": "Отчет KPI Дашборд отдела продаж",
+      "description": "Dashboard с трекингом KPI в реальном времени (NestJS + React + WebSockets). Модульная архитектура (FSD). Интеграция с CRM и ERP системами.",
+      "image": [
+        "/portfolio/kpi-1.png",
+        "/portfolio/kpi-2.png",
+        "/portfolio/kpi-3.png",
+        "/portfolio/kpi-4.png"
+      ],
+      "tags": [
+        "React",
+        "Next.js",
+        "Nest.js",
+        "TypeScript",
+        "@reduxjs/toolkit"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Коммерческий сайт для дизайнера интерьеров",
+      "description": "Коммерческий сайт для дизайнера интерьеров.",
+      "image": [
+        "/portfolio/site-1.png",
+        "/portfolio/site-2.png"
+      ],
+      "tags": [
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ]
+
+    },
+    {
+      "id": 3,
+      "title": "Система регистрации для клуба",
+      "description": "SPA для регистрации в клуб, чистый CSS. Интеграция с CRM",
+      "image": [
+        "/portfolio/gran-kush.png",
+        "/portfolio/gran-kush-2.png"
+      ],
+      "tags": [
+        "React.js",
+        "@reduxjs",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Firebase"
+      ],
+      "demoUrl": "https://example.com",
+      "githubUrl": "https://github.com/yourusername/project3"
+    },
+    {
+      "id": 4,
+      "title": "Встраиваемый конструктор договоров",
+      "description": "Устаревший локальный инструмент был перенесён в современное web-приложение",
+      "image": [
+        "/portfolio/alfa-seminar.png",
+        "/portfolio/alfa-seminar-1.png",
+        "/portfolio/alfa-seminar-2.png",
+        "/portfolio/alfa-seminar-3.png",
+        "/portfolio/alfa-seminar-4.png"
+      ],
+      "tags": [
+        "Next.js",
+        "Nest.js",
+        "Redux",
+        "Websockets",
+        "Redis",
+        "BullMQ"
+      ]
+    }
+  ]
+}

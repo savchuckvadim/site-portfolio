@@ -2,6 +2,7 @@
 import { chatReducer } from '@/modules/entities/Chat';
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 import { themeReducer } from '@/modules/features/theme';
+import { skillsReducer } from '@/modules/entities/Skills/model/SkillsSlice';
 
 export const listenerMiddleware = createListenerMiddleware();
 
@@ -13,6 +14,7 @@ export const listenerMiddleware = createListenerMiddleware();
 const rootReducer = combineReducers({
     chat: chatReducer,
     theme: themeReducer,
+    skills: skillsReducer,
     // service: serviceReducer
 
 

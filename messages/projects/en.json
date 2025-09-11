@@ -1,0 +1,74 @@
+{
+    "title": "Projects",
+    "subtitle": "Check out some of my recent work and personal projects",
+    "projects": [
+        {
+            "id": 1,
+            "title": "KPI Dashboard for Sales Department",
+            "description": "Dashboard with real-time tracking of KPI (NestJS + React + WebSockets). Modular architecture (FSD). Integration with CRM and ERP systems.",
+            "image": [
+                "/portfolio/kpi-1.png",
+                "/portfolio/kpi-2.png",
+                "/portfolio/kpi-3.png",
+                "/portfolio/kpi-4.png"
+            ],
+            "tags": [
+                "React",
+                "Next.js",
+                "Nest.js",
+                "TypeScript",
+                "@reduxjs/toolkit"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Commercial website for interior designer",
+            "description": "A collaborative site for an interior designer.",
+            "image": [
+                "/portfolio/site-1.png",
+                "/portfolio/site-2.png"
+            ],
+            "tags": [
+                "React",
+                "Next.js",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Registration system for a club",
+            "description": "A responsive portfolio website built with Next.js and Tailwind CSS",
+            "image": [
+                "/portfolio/gran-kush.png",
+                "/portfolio/gran-kush-2.png"
+            ],
+            "tags": [
+                "React.js",
+                "@reduxjs",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Firebase"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Embedded contract designer",
+            "description": "Migrated a legacy local tool into a modern web application.",
+            "image": [
+                "/portfolio/alfa-seminar.png",
+                "/portfolio/alfa-seminar-1.png",
+                "/portfolio/alfa-seminar-2.png",
+                "/portfolio/alfa-seminar-3.png",
+                "/portfolio/alfa-seminar-4.png"
+            ],
+            "tags": [
+                "Next.js",
+                "Nest.js",
+                "Redux",
+                "Websockets",
+                "Redis",
+                "BullMQ"
+            ]
+        }
+    ]
+}

@@ -25,8 +25,8 @@ const LanguageSwitcher = () => {
   }
 
   return (
-    <button onClick={switchLanguage} disabled={isPending} className="text-sm hover:underline">
-      <Flag type={otherLocale} />
+    <button onClick={switchLanguage} disabled={isPending} className="text-sm hover:underline ">
+      <Flag  type={otherLocale} />
       {/* {otherLocale === 'en' ? 'English' : 'Русский'} */}
     </button>
   )

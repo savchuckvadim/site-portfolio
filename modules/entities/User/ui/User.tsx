@@ -13,15 +13,12 @@ export default function User() {
         theme === 'default' ? setImgPath('/main/use1_background_pink.JPG') : theme === 'violete' ? setImgPath('/main/use1_background_fiolet.JPG') : setImgPath('/main/use1_background_blue.JPG')
     }, [theme])
     return (
-        // <div>
-            <Image
-                src={imgPath}
-                alt={'user'}
-                width={550}
-                height={550}
-                className='rounded-full'
-            />
-
-        // </div>
+        <Image
+            src={imgPath}
+            alt={'user'}
+            width={550}
+            height={550}
+            className='rounded-full'
+        />
     )
 }

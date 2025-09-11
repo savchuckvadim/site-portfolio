@@ -3,30 +3,30 @@ import { Header } from '@/modules/widgetes';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Footer } from '@/modules/widgetes';
-import { Metadata } from 'next';
+// import { Metadata } from 'next';
+import LoadingScreen from "@/modules/shared/LoadingScreen/ui/LoadingScreen";
 
 
-
-export const metadata: Metadata = {
-    title: "Vadim Savchuk",
-    description: "Site of Vadim Savchuk - Frontend Developer",
-    keywords: ["Developer", "Interior Design", "Architecture"],
-    openGraph: {
-        title: "Savchuk Developer - Architecture and Web Development",
-        description: "Discover top-notch architecture and web development solutions.",
-        url: "https://savchukdeveloper.com",
-        siteName: "Savchuk Developer",
-        // locale: "en_US",
-        type: "website",
-    },
-    // twitter: {
-    //   card: "summary_large_image",
-    //   title: "Volkov Design",
-    //   description: "Elegant and Unique Design",
-    //   creator: "@volkovdesign",
-    //   // images: ["https://volkovdesign.com/twitter-image.jpg"],
-    // },
-};
+// export const metadata: Metadata = {
+//     title: "Vadim Savchuk",
+//     description: "Site of Vadim Savchuk - Frontend Developer",
+//     keywords: ["Developer", "Interior Design", "Architecture"],
+//     openGraph: {
+//         title: "Savchuk Developer - Architecture and Web Development",
+//         description: "Discover top-notch architecture and web development solutions.",
+//         url: "https://savchukdeveloper.com",
+//         siteName: "Savchuk Developer",
+//         // locale: "en_US",
+//         type: "website",
+//     },
+//     // twitter: {
+//     //   card: "summary_large_image",
+//     //   title: "Volkov Design",
+//     //   description: "Elegant and Unique Design",
+//     //   creator: "@volkovdesign",
+//     //   // images: ["https://volkovdesign.com/twitter-image.jpg"],
+//     // },
+// };
 export default async function LocaleLayout({
     children,
     params,
@@ -48,10 +48,12 @@ export default async function LocaleLayout({
         // messages = (await import(`@/messages/${locale}.json`)).default
         const navigation = (await import(`@/messages/navigation/${locale}.json`)).default
         const skills = (await import(`@/messages/skills/${locale}.json`)).default
+        const home = (await import(`@/messages/home/${locale}.json`)).default
 
         messages = {
             navigation,
-            skills
+            skills,
+            home
         }
     } catch (error: unknown) {
         console.error('Error loading messages:', error);
@@ -59,14 +61,16 @@ export default async function LocaleLayout({
     }
 
     return (<NextIntlClientProvider locale={locale} messages={messages}>
-        <div className="w-full">
-            <Header />
-        </div>
-        <div className="container  mx-auto">
-            {children}
-        </div>
-        <Footer />
-
+        <>
+            <LoadingScreen />
+            <div className="w-full">
+                <Header />
+            </div>
+            <div className="container  mx-auto">
+                {children}
+            </div>
+            <Footer />
+        </>
     </NextIntlClientProvider>
 
     )
