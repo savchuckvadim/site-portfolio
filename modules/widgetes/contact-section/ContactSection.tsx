@@ -11,6 +11,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
+import { useCurrentLocale } from "@/app/lib/useCurrentLocale"
+import ru from '@/messages/contacts/ru.json'
+import en from '@/messages/contacts/en.json'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -33,6 +36,23 @@ export default function ContactSection() {
     setFormData({ name: "", email: "", subject: "", message: "" })
     alert("Thank you for your message! I'll get back to you soon.")
   }
+  const locale = useCurrentLocale()
+  const messages = { en, ru }
+  const {
+    title,
+    description,
+    name,
+    phone,
+    email,
+    telegram,
+    github,
+    linkedin,
+    location,
+    contactTitle,
+    contactDescription,
+    yourContactTitle,
+    yourContactDescription
+  } = messages[locale]
 
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
@@ -52,8 +72,8 @@ export default function ContactSection() {
           <div>
             <Card>
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-                <CardDescription>Feel free to reach out through any of these channels</CardDescription>
+                <CardTitle>{contactTitle}</CardTitle>
+                <CardDescription>{contactDescription}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -64,7 +84,7 @@ export default function ContactSection() {
                       href="mailto:your.email@example.com"
                       className="text-sm text-muted-foreground hover:text-primary"
                     >
-                      your.email@example.com
+                      {email}
                     </Link>
                   </div>
                 </div>
@@ -73,7 +93,7 @@ export default function ContactSection() {
                   <div>
                     <p className="text-sm font-medium">Phone</p>
                     <Link href="tel:+1234567890" className="text-sm text-muted-foreground hover:text-primary">
-                      +1 (234) 567-890
+                      {phone}
                     </Link>
                   </div>
                 </div>
@@ -81,20 +101,37 @@ export default function ContactSection() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
                     <p className="text-sm font-medium">Location</p>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-sm text-muted-foreground">{location}</p>
                   </div>
                 </div>
+
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="text-sm font-medium">Telegram</p>
+                    <Link
+                      href={`https://t.me/${telegram}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary"
+                    >
+                      @{telegram}
+                    </Link>
+                  </div>
+                </div>
+
+
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
                   <div>
                     <p className="text-sm font-medium">GitHub</p>
                     <Link
-                      href="https://github.com/yourusername"
+                      href={`https://github.com/${github}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-primary"
                     >
-                      github.com/yourusername
+                      github.com/{github}
                     </Link>
                   </div>
                 </div>
@@ -103,12 +140,12 @@ export default function ContactSection() {
                   <div>
                     <p className="text-sm font-medium">LinkedIn</p>
                     <Link
-                      href="https://linkedin.com/in/yourusername"
+                      href={`https://linkedin.com/in/${linkedin}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-primary"
                     >
-                      linkedin.com/in/yourusername
+                      linkedin.com/in/{linkedin}
                     </Link>
                   </div>
                 </div>
@@ -117,8 +154,8 @@ export default function ContactSection() {
           </div>
           <Card>
             <CardHeader>
-              <CardTitle>Send Me a Message</CardTitle>
-              <CardDescription>Fill out the form below and I'll get back to you as soon as possible</CardDescription>
+              <CardTitle>{yourContactTitle}</CardTitle>
+              <CardDescription>{yourContactDescription}</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -169,7 +206,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <Button type="submit" className="w-full">
-                  Send Message
+                  {yourContactTitle}
                 </Button>
               </form>
             </CardContent>
