@@ -1,12 +1,9 @@
 'use client'
 import { useCurrentLocale } from "@/app/lib/useCurrentLocale"
 
-import Image from "next/image"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github } from "lucide-react"
 import { getProjectsTranslations, ProjectTranslation } from "@/modules/entities/Projects/lib/util"
 import { ProjectsGrid } from "./components/ProjectsGrid"
 

@@ -62,9 +62,9 @@ export default function ContactSection() {
             <Badge variant="outline" className="px-3 py-1">
               Contact
             </Badge>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get In Touch</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{title}</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Have a project in mind or want to chat? Feel free to reach out!
+              {description}
             </p>
           </div>
         </div>

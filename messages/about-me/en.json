@@ -1,0 +1,12 @@
+{
+    "title": "My Journey",
+    "long": [
+        "I'm a frontend developer with over 4 years of experience, building web applications and interfaces that are user-friendly and scalable. My career started with freelance and internal tools, where I discovered my passion for turning complex processes into clear digital solutions.",
+        "I specialize in React, Next.js, Nest.js, and TypeScript, designing architecture with FSD principles and applying modern development practices. I strive to write clean and maintainable code that speeds up the product's performance.",
+        "In my free time, I explore new technologies, experiment with AI, and work on SaaS services."
+    ],
+    "middle": "I'm a frontend developer who turns complex tasks into simple and intuitive interfaces. I've worked with SaaS products, internal tools, and AI modules — always aiming to make the product clear, fast, and scalable.",
+    "end": "Frontend developer, transforming complex problems into simple and convenient interfaces. Experience ranges from websites and admin panels to federal-scale SaaS services with AI.",
+    "start": "Contact Me",
+    "learn": "Learn More"
+}

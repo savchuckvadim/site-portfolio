@@ -11,7 +11,7 @@ const LoadingScreen = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, 800); // 3 секунды прелоадер
+        }, 1800); // 3 секунды прелоадер
 debugger
         return () => clearTimeout(timer);
     }, []);
@@ -26,7 +26,7 @@ debugger
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 0 }}
                         // exit={{ opacity: 0 }}
-                        transition={{ duration: 0.6, ease: 'easeInOut' }}
+                        transition={{ duration: 1.6, ease: 'easeInOut' }}
                     >
                         <div className="center-spinner color-primary flex flex-col justify-center items-center ">
                             {/* <div className="spinner color-primary"></div>
@@ -35,7 +35,7 @@ debugger
                              */}
                             <div className='p-5 rounded-xl bg-secondary'>
                                 {/* <RingLoader /> */}
-                                <Cat size={100} className='text-primary' />
+                                <Cat size={80} className='text-primary' />
 
 
                             </div>

@@ -16,9 +16,9 @@ export default function HeaderNavigation() {
     return (
         <nav className="hidden md:flex gap-4">
 
-            <Link href="/" className={`cursor-pointer hover:text-indigo-700 ${isHome ? 'font-bold' : ''} ${isHome ? theme === 'default' ? "text-pink-400" : "text-primary" : ""}`}>{t('home')}</Link>
-            <Link href="/skills" className={`cursor-pointer hover:text-indigo-700  ${isSkills ? 'font-bold' : ''} ${isSkills ? theme === 'default' ? "text-pink-400" : "text-primary" : ""}`}>{t('skills')}</Link>
-            <Link href="/portfolio" className={`cursor-pointer hover:text-indigo-700  ${isPortfolio ? 'font-bold' : ''} ${isPortfolio ? theme === 'default' ? "text-pink-400" : "text-primary" : ""}`}>{t('portfolio')}</Link>
+            <Link href="/" className={`cursor-pointer hover:text-primary ${isHome ? 'font-bold' : ''} ${isHome ?  "text-primary" : ""}`}>{t('home')}</Link>
+            <Link href="/skills" className={`cursor-pointer hover:text-primary   ${isSkills ? 'font-bold' : ''} ${isSkills ?  "text-primary" : ""}`}>{t('skills')}</Link>
+            <Link href="/portfolio" className={`cursor-pointer hover:text-primary   ${isPortfolio ? 'font-bold' : ''} ${isPortfolio ?  "text-primary" : ""}`}>{t('portfolio')}</Link>
 
 
 
