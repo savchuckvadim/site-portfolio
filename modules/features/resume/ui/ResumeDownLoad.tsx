@@ -10,7 +10,7 @@ import { useDownloadResume } from '../hooks/useDownloadResume';
 
 const ResumeDownLoad = () => {
     const { isDownloading, handleDownload } = useDownloadResume();
-
+    const locale = useCurrentLocale();
 
     return (
         <>
@@ -21,10 +21,15 @@ const ResumeDownLoad = () => {
                     className="cursor-pointer"
                     variant={'default'}
                     disabled={isDownloading}
-                    onClick={() => !isDownloading && handleDownload()}
+                // onClick={() => !isDownloading && handleDownload()}
                 >
-                    <p className="hidden md:block text-sm ">resume</p>
-                    <Download />
+                    <a
+                        href={`/resume/${locale}/FrontendMiddleSavchuckVadim.pdf`}
+                        download="FrontendMiddleSavchuckVadim.pdf"
+                    >
+                        <p className="hidden md:block text-sm ">resume</p>
+                        <Download />
+                    </a>
                 </Button>
             )}
         </>
