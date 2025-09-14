@@ -17,20 +17,22 @@ const ResumeDownLoad = () => {
             {isDownloading ? (
                 <LoadingScreen />
             ) : (
-                <Button
-                    className="cursor-pointer"
-                    variant={'default'}
-                    disabled={isDownloading}
-                // onClick={() => !isDownloading && handleDownload()}
+                <a
+                    href={`/resume/${locale}/FrontendMiddleSavchuckVadim.pdf`}
+                    download="FrontendMiddleSavchuckVadim.pdf"
                 >
-                    <a
-                        href={`/resume/${locale}/FrontendMiddleSavchuckVadim.pdf`}
-                        download="FrontendMiddleSavchuckVadim.pdf"
+                    <Button
+                        className="cursor-pointer"
+                        variant={'default'}
+                        disabled={isDownloading}
+                    // onClick={() => !isDownloading && handleDownload()}
                     >
+
                         <p className="hidden md:block text-sm ">resume</p>
                         <Download />
-                    </a>
-                </Button>
+
+                    </Button>
+                </a>
             )}
         </>
     );
