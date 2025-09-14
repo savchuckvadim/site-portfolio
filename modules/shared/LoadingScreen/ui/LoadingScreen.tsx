@@ -12,7 +12,7 @@ const LoadingScreen = () => {
         const timer = setTimeout(() => {
             setIsVisible(false);
         }, 1800); // 3 секунды прелоадер
-        debugger;
+
         return () => clearTimeout(timer);
     }, []);
 
@@ -44,7 +44,7 @@ const LoadingScreen = () => {
                             animate={{ y: '-100%' }}
                             exit={{ y: '-100%' }}
                             transition={{ duration: 2, delay: 0.3, ease: 'easeInOut' }}
-                        ></motion.div>  
+                        ></motion.div>
 
 
                         <motion.div

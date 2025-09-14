@@ -9,12 +9,12 @@ export default function User() {
         '/main/use1_background_pink.JPG',
     );
     useEffect(() => {
-        debugger;
+
         theme === 'default'
             ? setImgPath('/main/use1_background_pink.JPG')
             : theme === 'violete'
-              ? setImgPath('/main/use1_background_fiolet.JPG')
-              : setImgPath('/main/use1_background_blue.JPG');
+                ? setImgPath('/main/use1_background_fiolet.JPG')
+                : setImgPath('/main/use1_background_blue.JPG');
     }, [theme]);
     return (
         <Image

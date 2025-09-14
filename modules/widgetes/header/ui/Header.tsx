@@ -9,7 +9,7 @@ export default function Header() {
     const [showMiniMenu, setShowMiniMenu] = useState(false);
 
     useEffect(() => {
-        debugger;
+
         if (!headerRef.current) return;
 
         const observer = new IntersectionObserver(

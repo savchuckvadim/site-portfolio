@@ -39,7 +39,7 @@ export default memo(function Skills() {
                 </TabsList>
 
                 {categories.map(([key, cat]) => {
-                    debugger;
+
                     return (
                         <TabsContent key={key} value={key} className="mt-6">
                             <div className="grid gap-6 md:grid-cols-2">

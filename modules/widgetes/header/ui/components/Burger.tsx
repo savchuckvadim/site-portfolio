@@ -17,7 +17,7 @@ export default function Burger() {
     const { theme } = useTheme();
     const t = useTranslations('navigation');
     useEffect(() => {
-        debugger;
+
         theme === 'default'
             ? setHoverClass('hover:text-gray-300')
             : setHoverClass('hover:text-primary');

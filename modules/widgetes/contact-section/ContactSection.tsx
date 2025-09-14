@@ -1,72 +1,45 @@
 'use client';
-
 import type React from 'react';
-
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
-import Link from 'next/link';
-import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
-import ru from '@/messages/contacts/ru.json';
-import en from '@/messages/contacts/en.json';
+import CallMe from './components/CallMe/CallMe';
+import { useContacts } from './hooks/useContacts';
+import Contacts from './components/Contacts/Contacts';
+import { useCallMe } from './hooks/useCalMe';
+import { DialogContent, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogHeader, DialogDescription } from '@/components/ui/dialog';
 
 export default function ContactSection() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-    });
-
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    ) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        // Here you would typically send the form data to your backend or a service like Formspree
-        console.log('Form submitted:', formData);
-        // Reset form after submission
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        alert("Thank you for your message! I'll get back to you soon.");
-    };
-    const locale = useCurrentLocale();
-    const messages = { en, ru };
     const {
         title,
         description,
-        name,
-        phone,
-        email,
-        telegram,
-        github,
-        linkedin,
-        location,
-        contactTitle,
-        contactDescription,
-        yourContactTitle,
-        yourContactDescription,
-    } = messages[locale];
+    } = useContacts()
 
+    const {
+        locale,
+        isLoading,
+        isSent,
+        setIsSent,
+    } = useCallMe()
+
+    console.log(isLoading)
     return (
         <section
             id="contact"
             className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
         >
+            {
+               (<Dialog open={isSent} onOpenChange={() => setIsSent(false)}>  <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle>{title}</DialogTitle>
+                        <DialogDescription>
+                            {
+                                locale === "ru" ? "Сообщение отправлено" : "Message sent"
+                            }
+                        </DialogDescription>
+                    </DialogHeader>
+
+                </DialogContent>  </Dialog>)
+            }
             <div className="container px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
@@ -83,167 +56,10 @@ export default function ContactSection() {
                 </div>
                 <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                     <div>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>{contactTitle}</CardTitle>
-                                <CardDescription>
-                                    {contactDescription}
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="flex items-center gap-3">
-                                    <Mail className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            Email
-                                        </p>
-                                        <Link
-                                            href="mailto:your.email@example.com"
-                                            className="text-sm text-muted-foreground hover:text-primary"
-                                        >
-                                            {email}
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Phone className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            Phone
-                                        </p>
-                                        <Link
-                                            href="tel:+1234567890"
-                                            className="text-sm text-muted-foreground hover:text-primary"
-                                        >
-                                            {phone}
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <MapPin className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            Location
-                                        </p>
-                                        <p className="text-sm text-muted-foreground">
-                                            {location}
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-3">
-                                    <Mail className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            Telegram
-                                        </p>
-                                        <Link
-                                            href={`https://t.me/${telegram}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-sm text-muted-foreground hover:text-primary"
-                                        >
-                                            @{telegram}
-                                        </Link>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-3">
-                                    <Github className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            GitHub
-                                        </p>
-                                        <Link
-                                            href={`https://github.com/${github}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-sm text-muted-foreground hover:text-primary"
-                                        >
-                                            github.com/{github}
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <Linkedin className="h-5 w-5 text-primary" />
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            LinkedIn
-                                        </p>
-                                        <Link
-                                            href={`https://linkedin.com/in/${linkedin}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-sm text-muted-foreground hover:text-primary"
-                                        >
-                                            linkedin.com/in/{linkedin}
-                                        </Link>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <Contacts />
                     </div>
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>{yourContactTitle}</CardTitle>
-                            <CardDescription>
-                                {yourContactDescription}
-                            </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input
-                                        id="name"
-                                        name="name"
-                                        placeholder="Your name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="email">Email</Label>
-                                    <Input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        placeholder="Your email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="subject">Subject</Label>
-                                    <Input
-                                        id="subject"
-                                        name="subject"
-                                        placeholder="Subject"
-                                        value={formData.subject}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="message">Message</Label>
-                                    <Textarea
-                                        id="message"
-                                        name="message"
-                                        placeholder="Your message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                        className="min-h-[120px]"
-                                    />
-                                </div>
-                                <Button type="submit" className="w-full">
-                                    {yourContactTitle}
-                                </Button>
-                            </form>
-                        </CardContent>
-                    </Card>
+                    <CallMe />
+
                 </div>
             </div>
         </section>
