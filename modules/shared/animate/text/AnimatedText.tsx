@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -47,7 +46,7 @@ export default function CoolText() {
                             });
                         },
                     },
-                }
+                },
             );
 
             // Анимация при уходе вверх - улетает вверх с вращением
@@ -67,35 +66,38 @@ export default function CoolText() {
             // });
         }
     }, []);
-    const text = 'Efficient & ergonomic design'
-    const descriptionFirst = 'Your vision is brought to life by our in-house team of professionals. We manage the full construction/renovation process from concept, budgeting and purchasing of materials to lighting, heating and furniture installation. Our pool of suppliers, vendors and manufacturers provide us with discounts which allow significant budget cuts. '
+    const text = 'Efficient & ergonomic design';
+    const descriptionFirst =
+        'Your vision is brought to life by our in-house team of professionals. We manage the full construction/renovation process from concept, budgeting and purchasing of materials to lighting, heating and furniture installation. Our pool of suppliers, vendors and manufacturers provide us with discounts which allow significant budget cuts. ';
     // Разделяем текст на буквы для индивидуальной анимации
-    const animatedText = text.split("").map((char, index) => (
+    const animatedText = text.split('').map((char, index) => (
         <span key={index} className="letter inline-block">
-            {char === " " ? "\u00A0" : char}
+            {char === ' ' ? '\u00A0' : char}
         </span>
     ));
 
     return (
         <div>
-            <div className='w-full flex justify-center items-center m-1 mt-10 mb-10'>
-              
-                    <ModalPhone
-                        ButtonInit={
-                            <div className='w-full flex justify-center items-center m-1 mt-10 mb-10'>
-                                <Button variant={'default'} className='w-[300px] h-[50px]'>
-                                    Call me now
-                                </Button>
-                            </div>
-                        }
-                    />
-                    {/* <Button variant={'default'} className='w-[300px] h-[50px]'>
+            <div className="w-full flex justify-center items-center m-1 mt-10 mb-10">
+                <ModalPhone
+                    ButtonInit={
+                        <div className="w-full flex justify-center items-center m-1 mt-10 mb-10">
+                            <Button
+                                variant={'default'}
+                                className="w-[300px] h-[50px]"
+                            >
+                                Call me now
+                            </Button>
+                        </div>
+                    }
+                />
+                {/* <Button variant={'default'} className='w-[300px] h-[50px]'>
                         get
                     </Button> */}
-            
             </div>
-            <div className='flex flex-col md:flex-row h-[500px] '>
-                <div className="h-full 
+            <div className="flex flex-col md:flex-row h-[500px] ">
+                <div
+                    className="h-full 
                 w-full 
                 md:w-1/2  
                 text-white 
@@ -103,12 +105,19 @@ export default function CoolText() {
                 flex-col 
                 items-center 
                 justify-center 
-                p-10">
-                    <h1 className='text-3xl mb-10 text-accent-foreground'>
+                p-10"
+                >
+                    <h1 className="text-3xl mb-10 text-accent-foreground">
                         From Idea to Reality
                     </h1>
-                    <p className='text-accent-foreground'>
-                        Your vision is brought to life by our in-house team of professionals. We manage the full construction/renovation process from concept, budgeting and purchasing of materials to lighting, heating and furniture installation. Our pool of suppliers, vendors and manufacturers provide us with discounts which allow significant budget cuts.
+                    <p className="text-accent-foreground">
+                        Your vision is brought to life by our in-house team of
+                        professionals. We manage the full
+                        construction/renovation process from concept, budgeting
+                        and purchasing of materials to lighting, heating and
+                        furniture installation. Our pool of suppliers, vendors
+                        and manufacturers provide us with discounts which allow
+                        significant budget cuts.
                     </p>
                 </div>
                 <div className="h-full w-1/2 bg-background text-white hidden md:flex flex-col items-center justify-center p-10">
@@ -124,26 +133,18 @@ export default function CoolText() {
                 </div>
             </div>
             <div className="h-full w-full p-5  flex flex-col md:flex-row  flex-wrap items-center justify-center mb-10 pt-20">
-                <div className='w-full  md:w-1/2 p-5'>
+                <div className="w-full  md:w-1/2 p-5">
                     <div
                         ref={textRef}
                         className="text-5xl text-primary font-bold "
                     >
-
-                        <p>
-                            {animatedText}
-                        </p>
+                        <p>{animatedText}</p>
                     </div>
-
-
                 </div>
-                <div className='w-full  md:w-1/2 p-5'>
-                    <p >
-                        {descriptionFirst}
-                    </p>
+                <div className="w-full  md:w-1/2 p-5">
+                    <p>{descriptionFirst}</p>
                 </div>
             </div>
-
 
             <AnimatedItemsSmall />
         </div>

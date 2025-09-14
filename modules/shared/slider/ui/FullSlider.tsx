@@ -19,7 +19,6 @@
 // import PhotoGallery from './PhotoGalleryGrid';
 // import AnimatedTitle from './AnimatedTitle';
 
-
 // // type Image = Project
 
 // interface FullSliderProps {
@@ -31,7 +30,6 @@
 // export default function FullSlider({ images, withNames, oneTitle }: FullSliderProps) {
 //     // const [images, setImages] = useState<Image[]>([]);
 //     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-
 
 //     if (images.length === 0) {
 //         return <p className="text-center text-gray-500">...</p>;

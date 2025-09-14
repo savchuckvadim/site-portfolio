@@ -46,4 +46,4 @@ export type Locale = (typeof locales)[number];
 //             "experience": "Опыт"
 //         }
 //     }
-// } as const; 
+// } as const;

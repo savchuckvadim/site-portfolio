@@ -1,10 +1,9 @@
 declare global {
     interface Pace {
-      on(event: string, callback: () => void): void;
+        on(event: string, callback: () => void): void;
     }
-  
+
     const Pace: Pace;
-  }
-  
-  export {};
-  
+}
+
+export {};

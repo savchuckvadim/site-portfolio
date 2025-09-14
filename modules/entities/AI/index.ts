@@ -1,1 +1,1 @@
-export { aiAPI } from './api/ai-api'
+export { aiAPI } from './api/ai-api';

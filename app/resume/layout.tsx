@@ -1,4 +1,8 @@
-export default function ResumeLayout({ children }: { children: React.ReactNode }) {
+export default function ResumeLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html>
             <head>

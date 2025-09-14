@@ -4,8 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Footer } from '@/modules/widgetes';
 // import { Metadata } from 'next';
-import LoadingScreen from "@/modules/shared/LoadingScreen/ui/LoadingScreen";
-
+import LoadingScreen from '@/modules/shared/LoadingScreen/ui/LoadingScreen';
 
 // export const metadata: Metadata = {
 //     title: "Vadim Savchuk",
@@ -38,40 +37,41 @@ export default async function LocaleLayout({
     const param = await params;
     const locale = param.locale;
 
-    if (!locale || !locales.includes(locale as typeof locales[number])) {
+    if (!locale || !locales.includes(locale as (typeof locales)[number])) {
         notFound();
     }
 
-    let messages
+    let messages;
 
     try {
         // messages = (await import(`@/messages/${locale}.json`)).default
-        const navigation = (await import(`@/messages/navigation/${locale}.json`)).default
-        const skills = (await import(`@/messages/skills/${locale}.json`)).default
-        const home = (await import(`@/messages/home/${locale}.json`)).default
+        const navigation = (
+            await import(`@/messages/navigation/${locale}.json`)
+        ).default;
+        const skills = (await import(`@/messages/skills/${locale}.json`))
+            .default;
+        const home = (await import(`@/messages/home/${locale}.json`)).default;
 
         messages = {
             navigation,
             skills,
-            home
-        }
+            home,
+        };
     } catch (error: unknown) {
         console.error('Error loading messages:', error);
-        notFound()
+        notFound();
     }
 
-    return (<NextIntlClientProvider locale={locale} messages={messages}>
-        <>
-            <LoadingScreen />
-            <div className="w-full">
-                <Header />
-            </div>
-            <div className="container  mx-auto">
-                {children}
-            </div>
-            <Footer />
-        </>
-    </NextIntlClientProvider>
-
-    )
-} 
+    return (
+        <NextIntlClientProvider locale={locale} messages={messages}>
+            <>
+                <LoadingScreen />
+                <div className="w-full">
+                    <Header />
+                </div>
+                <div className="container  mx-auto">{children}</div>
+                <Footer />
+            </>
+        </NextIntlClientProvider>
+    );
+}

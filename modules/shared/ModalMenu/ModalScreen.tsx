@@ -26,7 +26,6 @@ export const ModalScreen: FC<IModalScreenProps> = ({
         return null;
     }
     return (
-
         <div className="fixed h-screen w-screen inset-0 bg-background/10 backdrop-blur-xs flex items-center justify-center z-50">
             <div className="relative bg-card rounded-lg p-6 w-3/4 min-h-[80vh]  mx-4 flex flex-col justify-start items-center z-150 shadow-xl scrollbar-hide">
                 <div className="header flex flex-row gap-2 justify-between items-start w-full mb-4  ">

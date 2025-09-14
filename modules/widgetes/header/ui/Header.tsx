@@ -1,40 +1,36 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
-import HeaderContent from "./components/HeaderContent";
-import BottomMenu from "./components/BottomMenu";
-
+import { useEffect, useRef, useState } from 'react';
+import HeaderContent from './components/HeaderContent';
+import BottomMenu from './components/BottomMenu';
 
 export default function Header() {
-    const headerRef = useRef<HTMLElement | null>(null)
-    const [showMiniMenu, setShowMiniMenu] = useState(false)
+    const headerRef = useRef<HTMLElement | null>(null);
+    const [showMiniMenu, setShowMiniMenu] = useState(false);
 
     useEffect(() => {
-        debugger
-        if (!headerRef.current) return
+        debugger;
+        if (!headerRef.current) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setShowMiniMenu(!entry.isIntersecting)
+                setShowMiniMenu(!entry.isIntersecting);
             },
-            { threshold: 0 }
-        )
+            { threshold: 0 },
+        );
 
-        observer.observe(headerRef.current)
+        observer.observe(headerRef.current);
 
         return () => {
-            observer.disconnect()
-        }
-    }, [])
-
+            observer.disconnect();
+        };
+    }, []);
 
     const [isMounted, setIsMounted] = useState<boolean>(false);
 
     useEffect(() => {
         setIsMounted(true);
-
-    }, [])
-
+    }, []);
 
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -52,25 +48,18 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
-    console.log('showMiniMenu')
-    console.log(showMiniMenu)
+    console.log('showMiniMenu');
+    console.log(showMiniMenu);
     return (
         <>
             <header
                 ref={headerRef}
-                className={`bg-background w-full py-4 shadow-md bg-background`}>
-
+                className={`bg-background w-full py-4 shadow-md bg-background`}
+            >
                 <HeaderContent isMounted={isMounted} />
-            </header >
+            </header>
             {/* Мини-меню (toast в углу) */}
-            {
-                showMiniMenu && (
-                    <BottomMenu isMounted={isMounted} />
-
-                )
-            }
-
+            {showMiniMenu && <BottomMenu isMounted={isMounted} />}
         </>
-
     );
 }

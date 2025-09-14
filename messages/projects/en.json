@@ -24,24 +24,14 @@
             "id": 2,
             "title": "Commercial website for interior designer",
             "description": "A collaborative site for an interior designer.",
-            "image": [
-                "/portfolio/site-1.png",
-                "/portfolio/site-2.png"
-            ],
-            "tags": [
-                "React",
-                "Next.js",
-                "Tailwind CSS"
-            ]
+            "image": ["/portfolio/site-1.png", "/portfolio/site-2.png"],
+            "tags": ["React", "Next.js", "Tailwind CSS"]
         },
         {
             "id": 3,
             "title": "Registration system for a club",
             "description": "A responsive portfolio website built with Next.js and Tailwind CSS",
-            "image": [
-                "/portfolio/gran-kush.png",
-                "/portfolio/gran-kush-2.png"
-            ],
+            "image": ["/portfolio/gran-kush.png", "/portfolio/gran-kush-2.png"],
             "tags": [
                 "React.js",
                 "@reduxjs",

@@ -17,7 +17,6 @@
 // import ProjectGrid from './ProjectGrid';
 // import Image from 'next/image';
 
-
 // type Image = Project
 
 // // const baseUrl = '/api/projects';
@@ -25,7 +24,6 @@
 // export default function HeroSlider({ images }: { images: Project[] }) {
 //     // const [images, setImages] = useState<Image[]>([]);
 //     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-
 
 //     if (images.length === 0) {
 //         return <p className="text-center text-gray-500">...</p>;

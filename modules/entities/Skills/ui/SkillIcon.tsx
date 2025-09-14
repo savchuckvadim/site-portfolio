@@ -1,14 +1,14 @@
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
 
 interface SkillIconProps {
-    code: string
-    className?: string
+    code: string;
+    className?: string;
 }
 
 export function SkillIcon({ code, className }: SkillIconProps) {
     return (
         <svg
-            className={cn("h-full w-full text-primary", className)}
+            className={cn('h-full w-full text-primary', className)}
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -22,5 +22,5 @@ export function SkillIcon({ code, className }: SkillIconProps) {
             )}
             {/* Добавьте другие path для остальных иконок */}
         </svg>
-    )
-} 
+    );
+}

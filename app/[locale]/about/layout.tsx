@@ -1,9 +1,9 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-import LoadingScreen from "@/modules/shared/LoadingScreen/ui/LoadingScreen";
-import "@/styles/globals.css";
+import LoadingScreen from '@/modules/shared/LoadingScreen/ui/LoadingScreen';
+import '@/styles/globals.css';
 // import { Providers } from "@/modules/app";
-import { Footer, Header } from "@/modules/widgetes";
+import { Footer, Header } from '@/modules/widgetes';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -21,25 +21,21 @@ import { Footer, Header } from "@/modules/widgetes";
 // };
 
 export default function SiteLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
+    return (
+        <div className="relative">
+            <LoadingScreen />
 
-  return (
-    <div className="relative">
-      <LoadingScreen />
+            <div className="fixed w-full z-10">
+                <Header />
+            </div>
 
-      <div className="fixed w-full z-10">
-        <Header />
-      </div>
+            {children}
 
-      {children}
-
-
-      <Footer />
-
-    </div>
-  );
+            <Footer />
+        </div>
+    );
 }
-

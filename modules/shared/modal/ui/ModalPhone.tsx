@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { FC, useState, ReactElement } from "react";
+import { FC, useState, ReactElement } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from "@/components/ui/input";
+import { Input } from '@/components/ui/input';
 import {
     Dialog,
     DialogContent,
@@ -12,7 +12,7 @@ import {
     DialogFooter,
     DialogClose,
     DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 interface ModalPhoneProps {
     isOpen?: boolean;
@@ -20,11 +20,15 @@ interface ModalPhoneProps {
     ButtonInit?: ReactElement;
 }
 
-const ModalPhone: FC<ModalPhoneProps> = ({ isOpen: propIsOpen, ButtonInit, onClose }) => {
-    const [phone, setPhone] = useState<string>("");
+const ModalPhone: FC<ModalPhoneProps> = ({
+    isOpen: propIsOpen,
+    ButtonInit,
+    onClose,
+}) => {
+    const [phone, setPhone] = useState<string>('');
     const [internalIsOpen, setInternalIsOpen] = useState<boolean>(false);
 
-    const isControlled = typeof propIsOpen === "boolean" && onClose;
+    const isControlled = typeof propIsOpen === 'boolean' && onClose;
     const isOpen = isControlled ? propIsOpen : internalIsOpen;
 
     const handleOpenChange = (open: boolean) => {
@@ -41,9 +45,7 @@ const ModalPhone: FC<ModalPhoneProps> = ({ isOpen: propIsOpen, ButtonInit, onClo
     };
 
     const defaultButton = (
-        <Button onClick={() => handleOpenChange(true)}>
-            Open Modal
-        </Button>
+        <Button onClick={() => handleOpenChange(true)}>Open Modal</Button>
     );
 
     return (
@@ -64,7 +66,7 @@ const ModalPhone: FC<ModalPhoneProps> = ({ isOpen: propIsOpen, ButtonInit, onClo
                     <Input
                         placeholder="Your phone number"
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={e => setPhone(e.target.value)}
                         className="mb-2"
                     />
                 </div>

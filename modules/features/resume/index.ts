@@ -1,1 +1,1 @@
-export { default as ResumeDownLoad } from './ui/ResumeDownLoad'
+export { default as ResumeDownLoad } from './ui/ResumeDownLoad';

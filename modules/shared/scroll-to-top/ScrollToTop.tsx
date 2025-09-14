@@ -1,15 +1,16 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const ScrollToTop = ({ }) => {
+const ScrollToTop = ({}) => {
     const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrolled = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const maxScroll =
+                document.documentElement.scrollHeight - window.innerHeight;
 
             // Показываем кнопку, если не докрутили до конца
             if (scrolled < maxScroll - 50) {
@@ -38,13 +39,11 @@ const ScrollToTop = ({ }) => {
                     className="w-[50px] h-[50px] fixed bottom-8 right-8 p-1 rounded-full  bg-opacity-40 hover:bg-opacity-100 transition-all shadow-lg"
                     aria-label="Back to top"
                 >
-                    <p className='text-primary text-bold text-3xl'>
-                        ↑
-                    </p>
+                    <p className="text-primary text-bold text-3xl">↑</p>
                 </motion.button>
             )}
         </AnimatePresence>
     );
-}
+};
 
 export default ScrollToTop;

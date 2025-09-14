@@ -1,25 +1,24 @@
-import { useAppDispatch, useAppSelector } from "@/modules/app"
-import { useEffect, useState } from "react";
-import { ModeType, themeActions, ThemeType } from "../../model/ThemSlice";
-import { changeMode, changeTheme, getStoredThemeAndMode, setThemeAndMode } from "../utils/toggler.util";
-
+import { useAppDispatch, useAppSelector } from '@/modules/app';
+import { useEffect, useState } from 'react';
+import { ModeType, themeActions, ThemeType } from '../../model/ThemSlice';
+import {
+    changeMode,
+    changeTheme,
+    getStoredThemeAndMode,
+    setThemeAndMode,
+} from '../utils/toggler.util';
 
 export const useTheme = () => {
     const [isMounted, setIsMounted] = useState<boolean>(false);
-    const theme = useAppSelector(state => state.theme.theme)
-    const mode = useAppSelector(state => state.theme.mode)
-    const dispatch = useAppDispatch()
+    const theme = useAppSelector(state => state.theme.theme);
+    const mode = useAppSelector(state => state.theme.mode);
+    const dispatch = useAppDispatch();
 
+    const setTheme = (theme: ThemeType) =>
+        dispatch(themeActions.setTheme({ theme }));
 
-    const setTheme = (theme: ThemeType) => dispatch(
-        themeActions
-            .setTheme({ theme })
-    )
-
-    const setMode = (mode: ModeType) => dispatch(
-        themeActions
-            .setMode({ mode })
-    )
+    const setMode = (mode: ModeType) =>
+        dispatch(themeActions.setMode({ mode }));
     // const [theme, setTheme] = useState<'violete' | 'default' | 'blue'>('default');
 
     // Устанавливаем начальное состояние темы на клиенте
@@ -63,7 +62,6 @@ export const useTheme = () => {
         // document.body.classList.add(newTheme);
     };
 
-
     return {
         theme,
         mode,
@@ -71,7 +69,6 @@ export const useTheme = () => {
         toggleMode,
         toggleTheme,
         setTheme,
-        setMode
-    }
-}
-
+        setMode,
+    };
+};

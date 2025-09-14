@@ -2,16 +2,13 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
-
 interface HeroProps {
     image: string;
     alt: string;
     children: ReactNode;
 }
 
-
 export default function Hero({ image, alt, children }: HeroProps) {
-
     if (!image) {
         return <p className="text-center text-gray-500">...</p>;
     }
@@ -20,11 +17,7 @@ export default function Hero({ image, alt, children }: HeroProps) {
         <>
             <div className="relative bg-fixed w-full h-screen overflow-hidden ">
                 {/* Основной слайдер */}
-                <div
-                    key={`hero`}
-
-                    className="absolute inset-0 w-full h-full "
-                >
+                <div key={`hero`} className="absolute inset-0 w-full h-full ">
                     <Image
                         src={image}
                         alt={alt}
@@ -35,17 +28,11 @@ export default function Hero({ image, alt, children }: HeroProps) {
                         blurDataURL="/volkov.svg" // Путь к картинке-заглушке
                         className="w-full h-full object-cover  "
                     />
-
                 </div>
-                <div className='absolute inset-20  h-2/3 flex flex-col justify-center items-start'>
-                  
+                <div className="absolute inset-20  h-2/3 flex flex-col justify-center items-start">
                     {children}
                 </div>
-
-
-
             </div>
-
         </>
     );
 }

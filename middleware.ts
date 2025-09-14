@@ -7,7 +7,7 @@ const intlMiddleware = createIntlMiddleware({
     locales,
     defaultLocale,
     localePrefix: 'always',
-    localeDetection: false
+    localeDetection: false,
 });
 
 export async function middleware(req: NextRequest) {
@@ -18,7 +18,6 @@ export async function middleware(req: NextRequest) {
     const response = intlMiddleware(req);
 
     return response;
-
 }
 
 export const config = {
@@ -30,6 +29,7 @@ export const config = {
         // - _next internal routes
         '/((?!api|_next|resume|.*\\..*).*)',
         // Also match the root path
-        '/', '/(en|ru)/:path*'
-    ]
+        '/',
+        '/(en|ru)/:path*',
+    ],
 };
