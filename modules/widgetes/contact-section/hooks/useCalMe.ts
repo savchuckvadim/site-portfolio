@@ -14,25 +14,6 @@ export const useCallMe = () => {
     const dispatch = useAppDispatch();
     const { isLoading, isSent, isDone, message, name, phone, email } = useAppSelector(state => state.callMe)
 
-
-    const setIsLoading = (status: boolean) => {
-        dispatch(callMeActions.setIsLoading({ status }))
-    }
-    // const onNameChange = (data: CallMeState) => {
-    //     dispatch(callMeActions.setFormValue({ key: 'name', value: data.name }))
-    // }
-    // const onEmailChange = (data: CallMeState) => {
-    //     dispatch(callMeActions.setFormValue({ key: 'email', value: data.email }))
-    // }
-    // const onPhoneChange = (data: CallMeState) => {
-    //     dispatch(callMeActions.setFormValue({ key: 'phone', value: data.phone }))
-    // }
-    // const onSubjectChange = (data: CallMeState) => {
-    //     dispatch(callMeActions.setFormValue({ key: 'subject', value: data.subject }))
-    // }
-    // const onMessageChange = (data: CallMeState) => {
-    //     dispatch(callMeActions.setFormValue({ key: 'message', value: data.message }))
-    // }
     const setIsSent = (status: boolean) => {
         dispatch(callMeActions.setIsSent({ status }))
     }
@@ -41,16 +22,7 @@ export const useCallMe = () => {
     }
 
     const messages = { en, ru };
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-    //     subject: '',
-    //     message: '',
-    // });
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [isSent, setIsSent] = useState(false);
-    // const [isDone, setIsDone] = useState(false);
+
 
     useEffect(() => {
         if (isSent) {
@@ -75,17 +47,17 @@ export const useCallMe = () => {
         // Here you would typically send the form data to your backend or a service like Formspree
 
         // Reset form after submission
-        setIsLoading(true);
+        dispatch(callMeActions.setIsLoading({ status: true }));
 
 
         await sendCallMe(message, locale, name, phone, email);
 
-        await setIsLoading(false);
+        await dispatch(callMeActions.setIsLoading({ status: false }));
         dispatch(callMeActions.resetForm())
         setIsSent(true);
 
     };
-    const cachedhandleSubmit = useCallback(handleSubmit, [locale, setIsLoading, setIsSent]);
+    const cachedhandleSubmit = useCallback(handleSubmit, [locale, setIsSent]);
     const handleCloseMessage = async () => {
         await new Promise(resolve => setTimeout(resolve, 3000));
         setIsSent(false);
@@ -93,10 +65,6 @@ export const useCallMe = () => {
     };
     const cachedhandleCloseMessage = useCallback(handleCloseMessage, [setIsSent, setIsDone]);
     const {
-
-        // name,
-        // phone,
-        // email,
 
 
         yourContactTitle,
@@ -107,18 +75,11 @@ export const useCallMe = () => {
         locale,
         title: yourContactTitle,
         description: yourContactDescription,
-        // name: state.name,
-        // phone: state.phone,
-        // email: state.email,
-        // message: state.message,
-        // formData: state,
+
 
         setIsSent,
-        // onNameChange,
-        // onEmailChange,
-        // onPhoneChange,
-        // onSubjectChange,
-        // onMessageChange,
+
+
         handleSubmit: cachedhandleSubmit,
         handleChange: cachedhandleChange,
 
