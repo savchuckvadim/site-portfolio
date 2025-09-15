@@ -92,7 +92,7 @@ export const getAnswer =
     (message: string) =>
     async (dispatch: AppDispatch, getState: AppGetState) => {
         try {
-            // console.log("🟡 Отправляем запрос к серверу...");
+
             dispatch(chatActions.setIsLoading({ status: true }));
             const response = await fetch('https://april-online.ru/api/ollama', {
                 method: 'POST',

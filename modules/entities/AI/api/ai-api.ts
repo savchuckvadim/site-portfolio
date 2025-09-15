@@ -17,7 +17,7 @@ const headers = {
     'X-Requested-With': 'XMLHttpRequest',
 };
 
-// export const url =   `http://localhost:11434/api/generate`
+
 export const url = `http://localhost:8000/api/generate`;
 
 const online = axios.create({
@@ -47,7 +47,6 @@ export const aiAPI = {
                 result += new TextDecoder().decode(value);
             }
 
-            console.log('AI Response:', result);
             return result;
         } catch (error) {
             return result;

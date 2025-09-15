@@ -11,8 +11,6 @@ const intlMiddleware = createIntlMiddleware({
 });
 
 export async function middleware(req: NextRequest) {
-    console.log('Middleware - Request URL:', req.url);
-    console.log('Middleware - Default Locale:', defaultLocale);
 
     // Handle internationalization first
     const response = intlMiddleware(req);

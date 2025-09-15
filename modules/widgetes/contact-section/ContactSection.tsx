@@ -21,7 +21,7 @@ export default function ContactSection() {
         setIsSent,
     } = useCallMe()
 
-    console.log(isLoading)
+
     return (
         <section
             id="contact"

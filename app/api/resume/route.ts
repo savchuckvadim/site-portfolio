@@ -6,9 +6,9 @@ import { readFile } from 'fs/promises';
 import path from 'path';
 
 export async function GET(req: NextRequest) {
-    // путь к PDF-файлу (например, лежит в /public)
+
     const currentLocale = req.nextUrl.searchParams.get('locale');
-    console.log('currentLocale', currentLocale);
+
     const locale = currentLocale || "ru";
     const fileName = 'FrontendMiddleSavchuckVadim.pdf';
 
@@ -29,33 +29,3 @@ export async function GET(req: NextRequest) {
         },
     });
 }
-
-// export async function GET(req: NextRequest) {
-//   console.log('GET request received');
-//   console.log(req);
-//   const browser = await puppeteer.launch({
-//     headless: true, // Using boolean instead of 'new'
-//     args: ['--no-sandbox', '--disable-setuid-sandbox'], // если используешь Vercel или Linux
-//   });
-
-//   const page = await browser.newPage();
-
-//   // Локальный или внешний URL (например, на route PDF view)
-//   await page.goto('http://localhost:3000/resume', {
-//     waitUntil: 'networkidle0',
-//   });
-
-//   const pdfBuffer = await page.pdf({
-//     format: 'A4',
-//     printBackground: true,
-//   });
-
-//   await browser.close();
-
-//   return new Response(pdfBuffer, {
-//     headers: {
-//       'Content-Type': 'application/pdf',
-//       'Content-Disposition': 'inline; filename="generated.pdf"',
-//     },
-//   });
-// }

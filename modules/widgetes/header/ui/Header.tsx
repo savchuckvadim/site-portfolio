@@ -48,8 +48,7 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [lastScrollY]);
-    console.log('showMiniMenu');
-    console.log(showMiniMenu);
+
     return (
         <>
             <header

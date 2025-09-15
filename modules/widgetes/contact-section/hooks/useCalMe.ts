@@ -33,17 +33,17 @@ export const useCallMe = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Here you would typically send the form data to your backend or a service like Formspree
-        console.log('Form submitted:', formData);
+
         // Reset form after submission
         setIsLoading(true);
         await handleCloseMessage();
-        debugger
+
         await sendCallMe(formData.message, locale, formData.name, formData.phone, formData.email);
-debugger
+
         await setIsLoading(false);
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         setIsSent(true);
-        debugger
+
     };
 
     const handleCloseMessage = async () => {
@@ -52,18 +52,11 @@ debugger
     };
 
     const {
-        // title,
-        // description,
+
         name,
         phone,
         email,
 
-        // telegram,
-        // github,
-        // linkedin,
-        // location,
-        // contactTitle,
-        // contactDescription,
 
         yourContactTitle,
         yourContactDescription,
@@ -81,8 +74,7 @@ debugger
         setIsSent,
         handleChange,
         handleSubmit,
-        // telegram,
-        // github,
+
         isLoading,
         needShowMessage,
         handleCloseMessage,

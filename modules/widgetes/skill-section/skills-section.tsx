@@ -32,18 +32,7 @@ type SkillsTranslations = {
 };
 
 export default function SkillsSection() {
-    // const t = useTranslations("skills")
-    // const translations = t.raw("skills") as SkillsTranslations
-    // const categories = ["frontend", "backend", "databases", "devops", "architecture", "ai"]
-    // const test = t('categories') as SkillsTranslations
-    // console.log(test)
-    // debugger
-    // console.log(test['frontend'])
-    // debugger
-    // if (!translations || !translations.categories) {
-    //   console.error("Missing translations:", translations)
-    //   return null
-    // }
+
     const locale = useCurrentLocale();
     const title = locale === 'en' ? 'Technical Skills' : 'Технические навыки';
     const subtitle =
@@ -58,9 +47,7 @@ export default function SkillsSection() {
             <div className="container px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
-                        {/* <Badge variant="outline" className="px-3 py-1">
-              Expertise
-            </Badge> */}
+
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             {title}
                         </h2>
