@@ -21,6 +21,7 @@ export default function CallMe() {
         isSent,
         isDone
     } = useCallMe()
+    
     const locale = useCurrentLocale()
     const sentMessage = useMemo(() => {
         return {
@@ -51,7 +52,11 @@ export default function CallMe() {
 
                     </div>
                     : <form onSubmit={handleSubmit} className="space-y-4 h-[480px]">
-                        <CallMeInputs />
+                        <CallMeInputs
+                            locale={locale}
+                            // formData={formData}
+
+                        />
 
 
 

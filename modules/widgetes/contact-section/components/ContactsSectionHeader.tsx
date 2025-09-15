@@ -3,7 +3,7 @@ import type React from 'react';
 
 import { memo } from 'react';
 import { useContacts } from '../hooks/useContacts';
-import { Badge } from '@/components/ui/badge';
+
 import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
 
 export default memo(function ContactSectionHeader({ isFull }: { isFull: boolean }) {
@@ -17,9 +17,9 @@ export default memo(function ContactSectionHeader({ isFull }: { isFull: boolean 
 
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-                {isFull && <Badge variant="outline" className="px-3 py-1">
+                {/* {isFull && <Badge variant="outline" className="px-3 py-1">
                     {locale === "ru" ? "Контакты" : "Contacts"}
-                </Badge>}
+                </Badge>} */}
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                     {title}
                 </h2>

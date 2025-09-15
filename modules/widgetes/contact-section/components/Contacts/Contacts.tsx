@@ -13,24 +13,31 @@ import {
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { memo } from 'react';
-import { useContacts } from '../../hooks/useContacts';
 
-
+export interface ContactsProps {
+    contactTitle: string;
+    contactDescription: string;
+    email: string;
+    phone: string;
+    telegram: string;
+    github: string;
+    linkedin: string;
+    location: string;
+}
 export default memo(function Contacts({
+    contactTitle,
+    contactDescription,
+    email,
+    phone,
+    telegram,
+    github,
+    linkedin,
+    location,
 
-}) {
+}: ContactsProps) {
 
 
-    const {
-        contactTitle,
-        contactDescription,
-        email,
-        phone,
-        telegram,
-        github,
-        linkedin,
-        location,
-    } = useContacts()
+
 
     return (
 

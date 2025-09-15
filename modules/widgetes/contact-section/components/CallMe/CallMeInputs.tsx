@@ -1,31 +1,33 @@
 'use client';
+import CallMeNameInput from "./CallMeNameInput";
+import CallMeEmailInput from "./CallMeEmailInput";
+import CallMePhoneInput from "./CallMePhoneInput";
+import CallMeMessage from "./CallMeMessageInput";
 
-
-import { useCallMe } from "../../hooks/useCalMe";
-import CallMeInput from "./CallMeInput";
-
-export default function CallMeInputs() {
-
-    const {
-        locale,
-        handleChange,
-        formData,
-
-
-    } = useCallMe()
-
+export interface CallMeInputsProps {
+    locale: string;
+    // formData: { name: string, email: string, phone: string, message: string };
+    // handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+}
+export default function CallMeInputs({ locale }: CallMeInputsProps) {
 
     return <>
-        <CallMeInput
-            name="name"
-            id="name"
-            label={locale === "ru" ? "Имя" : "Name"}
-            type="text"
-            placeholder="Your name"
-            value={formData.name}
-            onChange={handleChange}
+        <CallMeNameInput
+
+            locale={locale}
+
         />
-        <CallMeInput
+        <CallMeEmailInput
+            locale={locale}
+        />
+        <CallMePhoneInput
+            locale={locale}
+        />
+        <CallMeMessage
+            locale={locale}
+        />
+
+        {/* <CallMeInput
             name="email"
             id="email"
             label={"Email"}
@@ -51,7 +53,7 @@ export default function CallMeInputs() {
             placeholder="Your message"
             value={formData.message}
             onChange={handleChange}
-        />
+        /> */}
 
     </>
 }
