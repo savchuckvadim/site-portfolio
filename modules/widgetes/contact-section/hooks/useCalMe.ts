@@ -2,7 +2,7 @@
 import { useCurrentLocale } from "@/app/lib/useCurrentLocale";
 import en from "@/messages/contacts/en.json";
 import ru from "@/messages/contacts/ru.json";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { sendCallMe } from "../lib/send-call-me";
 
 
@@ -19,7 +19,14 @@ export const useCallMe = () => {
     });
     const [isLoading, setIsLoading] = useState(false);
     const [isSent, setIsSent] = useState(false);
-    const [needShowMessage, setNeedShowMessage] = useState(false);
+    const [isDone, setIsDone] = useState(false);
+
+    useEffect(() => {
+        if (isSent) {
+
+            cachedhandleCloseMessage();
+        }
+    }, [isSent]);
 
 
 
@@ -29,7 +36,7 @@ export const useCallMe = () => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
-
+    const cachedhandleChange = useCallback(handleChange, []);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         // Here you would typically send the form data to your backend or a service like Formspree
@@ -45,12 +52,13 @@ export const useCallMe = () => {
         setIsSent(true);
 
     };
-
+    const cachedhandleSubmit = useCallback(handleSubmit, []);
     const handleCloseMessage = async () => {
         await new Promise(resolve => setTimeout(resolve, 3000));
-        // setIsSent(false);
+        setIsSent(false);
+        setIsDone(true);
     };
-
+    const cachedhandleCloseMessage = useCallback(handleCloseMessage, []);
     const {
 
         name,
@@ -70,13 +78,15 @@ export const useCallMe = () => {
         phone,
         email,
         formData,
-        isSent,
+
         setIsSent,
-        handleChange,
-        handleSubmit,
+        handleChange: cachedhandleChange,
+        handleSubmit: cachedhandleSubmit,
+
 
         isLoading,
-        needShowMessage,
-        handleCloseMessage,
+        isDone,
+        isSent,
+
     };
 };

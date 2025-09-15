@@ -3,6 +3,7 @@ import { useTheme } from '@/modules/features/theme';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
 
 export default function HeaderNavigation() {
     const pathname = usePathname();
@@ -12,26 +13,36 @@ export default function HeaderNavigation() {
     const isPortfolio = pathname.includes('portfolio');
     const isSkills = pathname.includes('skills');
     const isHome = pathname.includes('home');
+    const isContacts = pathname.includes('contacts');
+    const locale = useCurrentLocale()
+
 
     return (
         <nav className="hidden md:flex gap-4">
             <Link
-                href="/"
+                href={`/${locale}/home`}
                 className={`cursor-pointer hover:text-primary ${isHome ? 'font-bold' : ''} ${isHome ? 'text-primary' : ''}`}
             >
                 {t('home')}
             </Link>
             <Link
-                href="/skills"
+                href={`/${locale}/skills`}
                 className={`cursor-pointer hover:text-primary   ${isSkills ? 'font-bold' : ''} ${isSkills ? 'text-primary' : ''}`}
             >
                 {t('skills')}
             </Link>
             <Link
-                href="/portfolio"
+                href={`/${locale}/portfolio`}
                 className={`cursor-pointer hover:text-primary   ${isPortfolio ? 'font-bold' : ''} ${isPortfolio ? 'text-primary' : ''}`}
             >
                 {t('portfolio')}
+            </Link>
+
+            <Link
+                href={`/${locale}/contacts`}
+                className={`cursor-pointer hover:text-primary   ${isContacts ? 'font-bold' : ''} ${isContacts ? 'text-primary' : ''}`}
+            >
+                {t('contacts')}
             </Link>
         </nav>
     );

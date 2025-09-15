@@ -9,17 +9,19 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 
-import { Badge } from '@/components/ui/badge';
+
 import { Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { memo } from 'react';
 import { useContacts } from '../../hooks/useContacts';
 
 
-export default function Contacts() {
+export default memo(function Contacts({
+
+}) {
+
 
     const {
-
-
         contactTitle,
         contactDescription,
         email,
@@ -29,6 +31,7 @@ export default function Contacts() {
         linkedin,
         location,
     } = useContacts()
+
     return (
 
         <Card className='h-full'>
@@ -132,4 +135,4 @@ export default function Contacts() {
         </Card>
 
     );
-}
+})
