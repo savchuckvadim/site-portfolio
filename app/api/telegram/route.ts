@@ -1,4 +1,30 @@
 
+// export async function POST(req: Request) {
+//     const body = await req.json();
+//     const { name, email, phone, locale, message } = body;
+
+//     const apiUrl = process.env.TG_URL; // ✅
+//     const tgData = {
+//         "app": "konstruktor",
+//         "text": `PORTFOLIO SITE MESSAGE LOCALE:${locale} NAME:${name} EMAIL:${email} PHONE:${phone} MESSAGE:${message}`,
+//         "domain": "portfolio",
+//         "userId": "0"
+//     }
+//     console.log(JSON.stringify(tgData));
+//     const res = await fetch(`${apiUrl}`, {
+//         method: 'POST',
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(tgData),
+//     });
+//     const data = await res.json();
+//     console.log(data);
+
+//     return Response.json(data);
+// }
+
+
 export async function POST(req: Request) {
     try {
         const body = await req.json();
@@ -29,10 +55,12 @@ export async function POST(req: Request) {
         });
 
         const data = await res.json();
+        console.log('data telegram response');
+        console.log(data);
 
         return Response.json(data);
-    } catch (e: any) {
-
-        return Response.json({ error: e.message }, { status: 500 });
+    } catch (e: unknown) {
+        const error = e as Error;
+        return Response.json({ error: error?.message }, { status: 500 });
     }
 }
