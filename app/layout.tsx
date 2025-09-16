@@ -17,8 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: 'Vadim Savchuk',
-    description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
-
+    description: 'Frontend Developer for your projects',
     keywords: keywords,
     authors: [{ name: "Vadim Savchuk", url: "https://portfolio-savchuckvadims-projects.vercel.app" }],
     creator: "Vadim Savchuk",
@@ -30,17 +29,16 @@ export const metadata: Metadata = {
         description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
 
         url: 'https://portfolio-savchuckvadims-projects.vercel.app/en/home',
-        siteName: 'Vadim Savchuk',
-        type: 'website',
         images: [
             {
-              url: "/main/use1_double_cat.JPG", // 📌 добавь картинку в public/preview.png
-              width: 1200,
-              height: 630,
-              alt: "Vadim Savchuk Portfolio Preview"
-            }
-          ]
-
+                url: "https://portfolio-savchuckvadims-projects.vercel.app/main/use1_double_cat.JPG",
+                width: 1200,
+                height: 630,
+                alt: "Vadim Savchuk Portfolio Preview",
+            },
+        ],
+        siteName: 'Vadim Savchuk',
+        type: 'website',
     },
 };
 
