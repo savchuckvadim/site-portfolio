@@ -34,4 +34,6 @@ export const keywords = [
     'Redis',
     'RabbitMQ',
     'Docker',
+    'Savchuk Vadim',
+    'Савчук Вадим',
 ];
