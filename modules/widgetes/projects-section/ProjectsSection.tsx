@@ -10,7 +10,7 @@ import {
 } from '@/modules/entities/Projects/lib/util';
 import { ProjectsGrid } from './components/ProjectsGrid';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ isFull }: { isFull: boolean }) {
     const locale = useCurrentLocale();
     const translations: ProjectTranslation = getProjectsTranslations(locale);
     const { title, subtitle, projects } = translations;
@@ -36,14 +36,14 @@ export default function ProjectsSection() {
 
                 <div className="flex justify-center min-w-full">
                     <div className="flex flex-col justify-center gap-5 p-0 max-w-[200px]">
-                        <Button variant="default" asChild>
+                        {isFull && <Button variant="default" asChild>
                             <Link
                                 href={`/${locale}/contacts`}
 
                             >
                                 {locale === 'en' ? 'Contact Me' : 'Связаться со мной'}
                             </Link>
-                        </Button>
+                        </Button>}
 
                         <Button variant="outline" asChild>
                             <Link
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                 {locale === 'en' ? 'View More on GitHub' : 'GitHub'}
+                                {locale === 'en' ? 'View More on GitHub' : 'GitHub'}
                             </Link>
                         </Button>
                     </div>

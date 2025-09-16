@@ -7,7 +7,7 @@ export default function Home() {
         <main>
             <HeroSection />
             <AboutSection isFull={false} />
-            <ProjectsSection />
+            <ProjectsSection isFull={false} />
             <ContactSection isFull={false} />
         </main>
     );

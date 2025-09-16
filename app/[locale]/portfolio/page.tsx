@@ -3,7 +3,7 @@ import { ProjectsSection } from '@/modules/widgetes';
 export default function Portfolio() {
     return (
         <main>
-            <ProjectsSection />
+            <ProjectsSection isFull={true} />
         </main>
     );
 }
