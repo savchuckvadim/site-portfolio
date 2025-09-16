@@ -37,7 +37,7 @@ export default function ProjectsSection() {
                 <div className="flex justify-center">
                     <Button variant="outline" asChild>
                         <Link
-                            href="https://github.com/yourusername"
+                            href="https://github.com/savchuckvadim"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

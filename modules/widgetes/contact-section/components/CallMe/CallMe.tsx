@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { useCallMe } from "../../hooks/useCalMe";
 import CallMeHeader from "./CallMeHeader";
-import CallMeInputs from "./CallMeInputs";
+import CallMeInputs from "./Inputs/CallMeInputs";
 import CallMeSubmit from "./CallMeSubmit";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { useCurrentLocale } from "@/app/lib/useCurrentLocale";
@@ -21,7 +21,7 @@ export default function CallMe() {
         isSent,
         isDone
     } = useCallMe()
-    
+
     const locale = useCurrentLocale()
     const sentMessage = useMemo(() => {
         return {
@@ -54,7 +54,7 @@ export default function CallMe() {
                     : <form onSubmit={handleSubmit} className="space-y-4 h-[480px]">
                         <CallMeInputs
                             locale={locale}
-                            // formData={formData}
+                        // formData={formData}
 
                         />
 

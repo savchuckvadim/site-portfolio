@@ -8,15 +8,15 @@ import en from '@/messages/contacts/en.json';
 export default function Footer() {
     const locale = useCurrentLocale();
     const messages = { en, ru };
-    const { name, phone, email, telegram, github, linkedin } = messages[locale];
+    const { name, phone, email, github, linkedin } = messages[locale];
 
     const year = new Date().getFullYear();
     return (
         <footer className="w-full border-t bg-background py-6">
             <div className="container flex flex-col items-center justify-between gap-4 px-4 md:flex-row md:px-6">
-                <p className="text-center text-sm text-muted-foreground md:text-left">
+                {/* <p className="text-center text-sm text-muted-foreground md:text-left">
                     © {year} {name}. All rights reserved.
-                </p>
+                </p> */}
                 <div className="flex items-center gap-4">
                     <Link
                         href={`https://github.com/${github}`}
@@ -37,8 +37,10 @@ export default function Footer() {
                         <span className="sr-only">LinkedIn</span>
                     </Link>
                     <Link
-                        href="mailto:your.email@example.com"
+                        href={`mailto:${email}`}
                         className="text-muted-foreground hover:text-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <Mail className="h-5 w-5" />
                         <span className="sr-only">Email</span>

@@ -17,14 +17,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: 'Vadim Savchuk',
-    description: 'Fullstack Developer for your projects',
+    description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
+
     keywords: keywords,
     openGraph: {
-        title: 'Vadim Savchuk - Fullstack Developer',
-        description: 'Fullstack Developer for your projects',
+        title: 'Vadim Savchuk - Frontend Developer',
+        description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
+
         url: 'https://portfolio-savchuckvadims-projects.vercel.app/en/home',
         siteName: 'Vadim Savchuk',
         type: 'website',
+        images: [
+            {
+              url: "/use1_double_cat.png", // 📌 добавь картинку в public/preview.png
+              width: 1200,
+              height: 630,
+              alt: "Vadim Savchuk Portfolio Preview"
+            }
+          ]
+
     },
 };
 

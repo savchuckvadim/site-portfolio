@@ -2,7 +2,7 @@
 import { useCurrentLocale } from "@/app/lib/useCurrentLocale";
 import en from "@/messages/contacts/en.json";
 import ru from "@/messages/contacts/ru.json";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect} from "react";
 import { sendCallMe } from "../lib/send-call-me";
 import { useAppDispatch, useAppSelector } from "@/modules/app";
 import { callMeActions, CallMeState } from "@/modules/feature/call-me/CallMeSlice";
