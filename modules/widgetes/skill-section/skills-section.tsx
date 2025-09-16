@@ -13,6 +13,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useTranslations } from 'next-intl';
 import { Skills } from '@/modules/entities/Skills';
 import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 type Skill = {
     name: string;
@@ -31,7 +33,7 @@ type SkillsTranslations = {
     categories: Record<string, Category>;
 };
 
-export default function SkillsSection() {
+export default function SkillsSection({ isFull }: { isFull: boolean }) {
 
     const locale = useCurrentLocale();
     const title = locale === 'en' ? 'Technical Skills' : 'Технические навыки';
@@ -42,12 +44,14 @@ export default function SkillsSection() {
     return (
         <section
             id="skills"
-            className="w-full min-h-screen py-12 md:py-24 lg:py-7"
+            className={`w-full py-12 md:py-24 lg:py-7 ${isFull ? '' : 'bg-muted/50'}`}
         >
-            <div className="container px-4 md:px-6">
+            <div className="container px-4 md:px-6  min-h-screen">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
-
+                        {
+                            isFull && <Badge variant="outline" className="px-3 py-1">{locale === 'en' ? 'Skills' : 'Навыки'}</Badge>
+                        }
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             {title}
                         </h2>
@@ -58,6 +62,11 @@ export default function SkillsSection() {
                 </div>
 
                 <Skills />
+                <div className="min-w-full flex justify-center items-end min-h-full">
+                    <Link href={`/${locale}/portfolio`}> <Button variant="outline" className='bg-primary text-primary-foreground' >
+                        {locale === 'en' ? 'View Projects' : 'Посмотреть проекты'}
+                    </Button> </Link>
+                </div>
             </div>
         </section>
     );

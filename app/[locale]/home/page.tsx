@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <main>
             <HeroSection />
-            <AboutSection />
+            <AboutSection isFull={false} />
             <ProjectsSection />
             <ContactSection isFull={false} />
         </main>

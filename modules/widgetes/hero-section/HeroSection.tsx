@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import User from '@/modules/entities/User/ui/User';
 import { useTranslations } from 'next-intl';
+import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
 
 export default function HeroSection() {
     const t = useTranslations('home');
@@ -10,7 +11,7 @@ export default function HeroSection() {
     const description = t('description');
     const start = t('start');
     const learn = t('learn');
-
+    const locale = useCurrentLocale()
     return (
         <section className="w-full py-6 md:py-10 lg:py-7">
             <div className="container px-4 md:px-6">
@@ -26,10 +27,10 @@ export default function HeroSection() {
                         </div>
                         <div className="flex flex-col gap-2 min-[400px]:flex-row">
                             <Button size="lg" asChild>
-                                <Link href="#get-started">{start}</Link>
+                                <Link href={`/${locale}/contacts`}>{start}</Link>
                             </Button>
                             <Button size="lg" variant="outline" asChild>
-                                <Link href="#learn-more">{learn}</Link>
+                                <Link href={`/${locale}/about`}>{learn}</Link>
                             </Button>
                         </div>
                     </div>

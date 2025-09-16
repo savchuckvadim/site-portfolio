@@ -40,6 +40,12 @@ export const metadata: Metadata = {
         siteName: 'Vadim Savchuk',
         type: 'website',
     },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Vadim Savchuk - Frontend Developer',
+        description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
+        images: ["https://portfolio-savchuckvadims-projects.vercel.app/main/use1_double_cat.JPG", "https://portfolio-savchuckvadims-projects.vercel.app/main/use1_background.JPG"],
+    },
 };
 
 export default async function RootLayout({

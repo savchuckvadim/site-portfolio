@@ -24,7 +24,7 @@ export default memo(function Skills() {
     const { currentTab, setCurrentTab } = useSkillsTab();
 
     return (
-        <div className="mx-auto max-w-5xl py-12">
+        <div className="mx-auto container py-12">
             <Tabs
                 value={currentTab}
                 onValueChange={setCurrentTab}

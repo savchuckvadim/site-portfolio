@@ -4,7 +4,7 @@ export default function SkillsPage() {
     return (
         <>
             <main>
-                <SkillsSection />
+                <SkillsSection isFull={true} />
             </main>
         </>
     );

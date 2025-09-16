@@ -14,16 +14,24 @@ export default function HeaderNavigation() {
     const isSkills = pathname.includes('skills');
     const isHome = pathname.includes('home');
     const isContacts = pathname.includes('contacts');
+    const isAbout = pathname.includes('about');
     const locale = useCurrentLocale()
 
 
     return (
-        <nav className="hidden md:flex gap-4">
+        <nav className="hidden md:flex gap-4 ">
             <Link
                 href={`/${locale}/home`}
                 className={`cursor-pointer hover:text-primary ${isHome ? 'font-bold' : ''} ${isHome ? 'text-primary' : ''}`}
             >
                 {t('home')}
+
+            </Link>
+            <Link
+                href={`/${locale}/about`}
+                className={`cursor-pointer hover:text-primary   ${isAbout ? 'font-bold' : ''} ${isAbout ? 'text-primary' : ''}`}
+            >
+                {t('about')}
             </Link>
             <Link
                 href={`/${locale}/skills`}

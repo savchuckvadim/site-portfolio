@@ -8,7 +8,7 @@ export interface HeaderContentProps {
 export default function HeaderContent({ isMounted }: HeaderContentProps) {
     return (
         isMounted && (
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div className="container mx-auto xs:px-6 sm:px-0 flex items-center justify-between">
                 <HeaderNavigation />
                 <Burger />
                 <ThemeMenu />

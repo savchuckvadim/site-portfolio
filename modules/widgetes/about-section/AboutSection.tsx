@@ -6,21 +6,21 @@ import ru from '@/messages/about-me/ru.json';
 import en from '@/messages/about-me/en.json';
 import { useCurrentLocale } from '@/app/lib/useCurrentLocale';
 
-export default function AboutSection() {
+export default function AboutSection({ isFull }: { isFull: boolean }) {
     const locale = useCurrentLocale();
     const messages = { en, ru };
     const { title, long, middle, end, start, learn } = messages[locale];
     return (
         <section
             id="about"
-            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+            className={`w-full py-12 md:py-24 lg:py-12  ${isFull ? '' : 'bg-muted/50'}`}
         >
             <div className="container px-4 md:px-6">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
-                        <Badge variant="outline" className="px-3 py-1">
+                        {isFull && <Badge variant="outline" className="px-3 py-1">
                             About Me
-                        </Badge>
+                        </Badge>}
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             {title}
                         </h2>
@@ -29,7 +29,7 @@ export default function AboutSection() {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+                <div className="mx-auto grid container items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                     <Image
                         src="/portfolio/code-2.avif"
                         width={400}

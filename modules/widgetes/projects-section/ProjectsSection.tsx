@@ -21,7 +21,7 @@ export default function ProjectsSection() {
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
                         <Badge variant="outline" className="px-3 py-1">
-                            Portfolio
+                            {locale === 'en' ? 'Portfolio' : 'Портфолио'}
                         </Badge>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             {title}
@@ -34,16 +34,27 @@ export default function ProjectsSection() {
 
                 <ProjectsGrid projects={projects} />
 
-                <div className="flex justify-center">
-                    <Button variant="outline" asChild>
-                        <Link
-                            href="https://github.com/savchuckvadim"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View More on GitHub
-                        </Link>
-                    </Button>
+                <div className="flex justify-center min-w-full">
+                    <div className="flex flex-col justify-center gap-5 p-0 max-w-[200px]">
+                        <Button variant="default" asChild>
+                            <Link
+                                href={`/${locale}/contacts`}
+
+                            >
+                                {locale === 'en' ? 'Contact Me' : 'Связаться со мной'}
+                            </Link>
+                        </Button>
+
+                        <Button variant="outline" asChild>
+                            <Link
+                                href="https://github.com/savchuckvadim"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                 {locale === 'en' ? 'View More on GitHub' : 'GitHub'}
+                            </Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </section>
