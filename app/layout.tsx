@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
 
     keywords: keywords,
+    authors: [{ name: "Vadim Savchuk", url: "https://portfolio-savchuckvadims-projects.vercel.app" }],
+    creator: "Vadim Savchuk",
+    publisher: "Vadim Savchuk",
+
+    metadataBase: new URL("https://portfolio-savchuckvadims-projects.vercel.app"),
     openGraph: {
         title: 'Vadim Savchuk - Frontend Developer',
         description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
@@ -29,7 +34,7 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-              url: "/use1_double_cat.png", // 📌 добавь картинку в public/preview.png
+              url: "/main/use1_double_cat.png", // 📌 добавь картинку в public/preview.png
               width: 1200,
               height: 630,
               alt: "Vadim Savchuk Portfolio Preview"

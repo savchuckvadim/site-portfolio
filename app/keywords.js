@@ -35,5 +35,4 @@ export const keywords = [
     'RabbitMQ',
     'Docker',
     'Savchuk Vadim',
-    'Савчук Вадим',
 ];
