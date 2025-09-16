@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         type: 'website',
         images: [
             {
-              url: "/main/use1_double_cat.png", // 📌 добавь картинку в public/preview.png
+              url: "/main/use1_double_cat.JPG", // 📌 добавь картинку в public/preview.png
               width: 1200,
               height: 630,
               alt: "Vadim Savchuk Portfolio Preview"
