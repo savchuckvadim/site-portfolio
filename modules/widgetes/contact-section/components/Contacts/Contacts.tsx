@@ -56,7 +56,7 @@ export default memo(function Contacts({
                             Email
                         </p>
                         <Link
-                            href="mailto:your.email@example.com"
+                            href={`mailto:${email}`}
                             className="text-sm text-muted-foreground hover:text-primary"
                         >
                             {email}
@@ -70,7 +70,7 @@ export default memo(function Contacts({
                             Phone
                         </p>
                         <Link
-                            href="tel:+1234567890"
+                            href={`tel:${phone}`}
                             className="text-sm text-muted-foreground hover:text-primary"
                         >
                             {phone}

@@ -30,7 +30,7 @@
         {
             "id": 3,
             "title": "Registration system for a club",
-            "description": "A responsive portfolio website built with Next.js and Tailwind CSS",
+            "description": "Single-page registration app for a club, integrated with the CRM.",
             "image": ["/portfolio/gran-kush.png", "/portfolio/gran-kush-2.png"],
             "tags": [
                 "React.js",

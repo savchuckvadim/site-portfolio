@@ -86,7 +86,7 @@ export default function AboutSection({ isFull }: { isFull: boolean }) {
                             <Card>
                                 <CardContent className="p-4">
                                     <div className="text-2xl font-bold">
-                                        100500+
+                                        20+
                                     </div>
                                     <div className="text-sm text-muted-foreground">
                                         {locale === 'en'
