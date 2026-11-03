@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: 'Vadim Savchuk',
-    description: 'Frontend Developer for your projects',
+    description: 'Full-Stack Developer for your projects',
     keywords: keywords,
     authors: [{ name: "Vadim Savchuk", url: "https://portfolio-savchuckvadims-projects.vercel.app" }],
     creator: "Vadim Savchuk",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
     metadataBase: new URL("https://portfolio-savchuckvadims-projects.vercel.app"),
     openGraph: {
-        title: 'Vadim Savchuk - Frontend Developer',
-        description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
+        title: 'Vadim Savchuk - Full-Stack Developer',
+        description: "Full-Stack Developer with 7 years of experience building production web applications.",
 
         url: 'https://portfolio-savchuckvadims-projects.vercel.app/en/home',
         images: [
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Vadim Savchuk - Frontend Developer',
-        description: "Frontend Developer with over 5 years of experience building modern, scalable web applications.",
+        title: 'Vadim Savchuk - Full-Stack Developer',
+        description: "Full-Stack Developer with 7 years of experience building production web applications.",
         images: ["https://portfolio-savchuckvadims-projects.vercel.app/main/use1_double_cat.JPG", "https://portfolio-savchuckvadims-projects.vercel.app/main/use1_background.JPG"],
     },
 };

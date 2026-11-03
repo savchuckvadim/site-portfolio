@@ -51,7 +51,7 @@ export default function AboutSection({ isFull }: { isFull: boolean }) {
                         <div className="grid grid-cols-2 gap-4 pt-4">
                             <Card>
                                 <CardContent className="p-4">
-                                    <div className="text-2xl font-bold">4+</div>
+                                    <div className="text-2xl font-bold">7</div>
                                     <div className="text-sm text-muted-foreground">
                                         {locale === 'en'
                                             ? 'Years Experience'
